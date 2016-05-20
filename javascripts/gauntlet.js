@@ -1,27 +1,16 @@
 "use strict";
 
+var Gauntlet = (function(gauntlet) {
+  //NOTE(adam): this would attach to a character to give it a weapon
+  gauntlet.constructWeapon = function(weaponId) {
+    //NOTE(adam): create generic weapon
+    var weapon = new gauntlet.Weapon();
+    //NOTE(adam): attach specific properties to weapon
+    Object.assign(weapon, gauntlet.getWeaponData(weaponId));
+    return weapon;
+  };
 
-// Weapons
+  return gauntlet;
+}(Gauntlet || {}));
 
-var weapons = {
-  bareHands: {
-    name: "bare hands",
-    damage: 1,
-    hands: 2
-  },
-  dagger: {
-    name: "dagger",
-    damage: 4,
-    hands: 1
-  },
-  broadsword: {
-    name: "broad sword",
-    damage: 14,
-    hands: 2
-  },
-  warAxe: {
-    name: "war axe",
-    damage: 18,
-    hands: 2
-  }
-};
+console.log("Gauntlet.constructWeapon(warAxe)", Gauntlet.constructWeapon("warAxe"));
