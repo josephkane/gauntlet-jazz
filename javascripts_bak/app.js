@@ -1,4 +1,4 @@
-/* globals Gauntlet, WarAxe, BroadSword */
+/* globals WarAxe, BroadSword */
 "use strict";
 
 /*
