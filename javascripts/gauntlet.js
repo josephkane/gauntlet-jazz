@@ -3,9 +3,9 @@
 (function() {
   let details = {
     name: "Steve",
-    species: "orc",
-    class: "warrior",
-    weapon: "warAxe"
+    speciesId: "orc",
+    classId: "warrior",
+    weaponId: "warAxe"
   };
 
   console.log("character", Gauntlet.Character.constructCharacter(details));
