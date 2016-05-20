@@ -33,6 +33,7 @@ $(document).ready(function() {
    */
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
+    console.log("nextCard", nextCard);
     var moveAlong = false;
 
     switch (nextCard) {
