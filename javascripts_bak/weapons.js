@@ -30,3 +30,11 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+
+var weapons = {
+  dagger: {
+    name: "dagger",
+    damage: 4,
+    hands: 1
+  }
+};
