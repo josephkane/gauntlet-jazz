@@ -13,7 +13,7 @@ var Gauntlet = (function(gauntlet) {
     //NOTE(adam): create generic weapon
     var weapon = new gauntlet.Weapon();
     //NOTE(adam): attach specific properties to weapon
-    Object.assign(weapon, gauntlet.getWeaponData(weaponId));
+    Object.assign(weapon, gauntlet.Weapon.getWeaponData(weaponId));
     return weapon;
   };
 
