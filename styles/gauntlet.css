@@ -28,7 +28,8 @@ LAYOUT STYLES
 	text-align: center;
 }
 
-.player-image {
+.player-image,
+.enemy-image {
 	min-height: 250px;
 	border: 1px solid black;
 	background-color: white;
