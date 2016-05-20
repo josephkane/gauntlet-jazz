@@ -8,6 +8,19 @@ var Gauntlet = (function(gauntlet) {
     };
   };
 
+  //NOTE(adam): this would attach to a character to give it a weapon
+  gauntlet.Weapon.constructWeapon = function(weaponId) {
+    //NOTE(adam): create generic weapon
+    var weapon = new gauntlet.Weapon();
+    //NOTE(adam): attach specific properties to weapon
+    Object.assign(weapon, gauntlet.Weapon.getWeaponData(weaponId));
+    return weapon;
+  };
+
+  gauntlet.Weapon.getWeaponData = function(id) {
+    return weapons[id];
+  };
+
   //NOTE(adam): weapon data by id
   let weapons = {
     bareHands: {
@@ -30,10 +43,6 @@ var Gauntlet = (function(gauntlet) {
       damage: 18,
       hands: 2
     }
-  };
-
-  gauntlet.getWeaponData = function(id) {
-    return weapons[id];
   };
 
   return gauntlet;
