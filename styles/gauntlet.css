@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Helvetica", "sans-serif";
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/*------------------
+
+LAYOUT STYLES
+
+-------------------*/
+
+/*.row {
+	border: 1px dotted red;
+}*/
+
+#game-headline {
+	text-align: center;
+}
+
+.player-image,
+.enemy-image {
+	min-height: 250px;
+	border: 1px solid black;
+	background-color: white;
+	box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#attack-area {
+	margin-top: 100px;
+	padding: 3px 10px;
+}
+
+#attack-button {
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 5px;
+	background-color: white;
+	width: 100%;
+}
+
+#attack-button:hover {
+	background-color: black;
+	color: white;
+}
+
+.stats {
+	margin-top: 10px;
+}
