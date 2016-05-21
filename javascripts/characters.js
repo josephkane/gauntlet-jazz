@@ -6,9 +6,17 @@ var Gauntlet = (function(gauntlet) {
     this.health = 100;
   };
 
+  gauntlet.Character.prototype.isAlive = function() {
+    return this.health > 0;
+  };
+
   gauntlet.Character.prototype.attack = function(enemy) {
     enemy.health -= this.weapon.damage;
     console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${this.weapon.damage} damage.`);
+    if(!enemy.isAlive()) {
+      console.log("Victory:", `${enemy.name} is defeated!`);
+    }
+    return enemy.isAlive();
   };
 
   gauntlet.Character.constructCharacter = function(details) {
