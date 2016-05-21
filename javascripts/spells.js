@@ -15,9 +15,7 @@ var Gauntlet = (function(gauntlet) {
     // chose spelled based on randomly indexing into spells object.
     var spellsArray = Object.keys(spells);
     var selectedSpell = spellsArray[Math.floor(Math.random()*spellsArray.length)];
-    let spell = new gauntlet.Spell();
-    Object.assign(spell, spells[selectedSpell]);
-    return spell;
+    return gauntlet.Spell.constructSpell(selectedSpell);
   };
 
 
