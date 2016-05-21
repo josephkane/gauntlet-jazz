@@ -8,8 +8,8 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Character.constructCharacter = function(details) {
     let character = new gauntlet.Character(details.name);
 
-    // character.species = gauntlet.constructSpecies(details.speciesId);
-    // character.class = gauntlet.constructClass(details.classId);
+    character.species = gauntlet.Species.constructSpecies(details.speciesId);
+    character.class = gauntlet.PlayerClass.constructClass(details.classId);
     character.weapon = gauntlet.Weapon.constructWeapon(details.weaponId);
 
     return character;

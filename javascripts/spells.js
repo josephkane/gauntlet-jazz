@@ -11,6 +11,7 @@ var Gauntlet = (function(gauntlet) {
     return spell;
   };
 
+
   let spells = {
     sphere: {
       name: "Sphere",
@@ -21,5 +22,3 @@ var Gauntlet = (function(gauntlet) {
 
   return gauntlet;
 }(Gauntlet || {}));
-
-console.log("Gauntlet.Spell.constructSpell(sphere)", Gauntlet.Spell.constructSpell("sphere"));

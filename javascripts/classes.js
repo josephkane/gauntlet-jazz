@@ -1,6 +1,22 @@
 "use strict";
 
 var Gauntlet = (function(gauntlet) {
+  // class constructor
+  gauntlet.PlayerClass = function() {
+    this.name = "Beggar";
+    this.healthBonus = 0;
+    this.strengthBonus = 0;
+    this.intelligenceBonus = 0;
+    this.magical = false;
+  };
+
+  gauntlet.PlayerClass.constructClass = function(classId) {
+    var playerClass = new gauntlet.PlayerClass();
+    Object.assign(playerClass, classes[classId]);
+    return playerClass;
+  };
+
+
   let fighter = {
     name: "Fighter",
     healthBonus: 20,
@@ -15,7 +31,8 @@ var Gauntlet = (function(gauntlet) {
     intelligenceBonus: 20
   };
 
-  var classes = {
+  let classes = {
+    // MELEE CLASSES
     fighter: fighter,
     // All non-magical subclasses are set to inherit from fighter
     warrior: {
@@ -38,7 +55,7 @@ var Gauntlet = (function(gauntlet) {
       healthBonus: fighter.healthBonus + 10,
       strengthBonus: fighter.strengthBonus + 40
     },
-    //MAGICAL CLASSES.
+    // MAGICAL CLASSES
     mage: mage,
     // All subclasses are set to inherit from Mage
     shaman: {
@@ -58,7 +75,6 @@ var Gauntlet = (function(gauntlet) {
     conjurer: {
       name: "Conjurer",
       magical: mage.magical,
-      // healthBonus: 0, // this isnt actually included
       strengthBonus: mage.strengthBonus - 10,
       intelligenceBonus: mage.intelligenceBonus + 10
     },
@@ -71,28 +87,5 @@ var Gauntlet = (function(gauntlet) {
     }
   };
 
-  // /*
-  //   Base function for a player, or enemy, class (profession)
-  //  */
-  gauntlet.PlayerClass = function() {
-    this.name = "Beggar";
-    this.healthBonus = 0;
-    this.strengthBonus = 0;
-    this.intelligenceBonus = 0;
-    this.magical = false;
-
-    this.toString = function() {
-      return this.name;
-    };
-  };
-
-  gauntlet.constructClass = function(classId) {
-    var playerClass = new gauntlet.PlayerClass();
-    Object.assign(playerClass, classes[classId]);
-    return playerClass;
-  };
-
   return gauntlet;
 }(Gauntlet || {}));
-
-console.log("Gauntlet.constructClass(sorcerer)", Gauntlet.constructClass("sorcerer"));
