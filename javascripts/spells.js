@@ -9,7 +9,7 @@ var Gauntlet = (function(gauntlet) {
     let spell = new gauntlet.Spell();
     Object.assign(spell, spells[spellId]);
     return spell;
-  }; 
+  };
 
   gauntlet.Spell.random = function() {
     // chose spelled based on randomly indexing into spells object.
@@ -34,7 +34,6 @@ var Gauntlet = (function(gauntlet) {
 
   return gauntlet;
 }(Gauntlet || {}));
-
 
 console.log("Gauntlet.Spell.random() =  ", Gauntlet.Spell.random());
 // console.log("Gauntlet.Spell.constructSpell(sphere)", Gauntlet.Spell.constructSpell("sphere"));

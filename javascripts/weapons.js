@@ -17,6 +17,7 @@ var Gauntlet = (function(gauntlet) {
     return weapon;
   };
 
+
   //NOTE(adam): weapon data by id
   let weapons = {
     bareHands: {
