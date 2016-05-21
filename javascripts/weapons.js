@@ -4,7 +4,7 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Weapon = function() {
     //NOTE(adam): shared swing function
     this.swing = function() {
-      return this.damage;
+      return this.damage - this.vary + Math.floor(Math.random() * (this.vary * 2 + 1));
     };
   };
 
@@ -23,21 +23,25 @@ var Gauntlet = (function(gauntlet) {
     bareHands: {
       name: "bare hands",
       damage: 1,
+      vary: 1,
       hands: 2
     },
     dagger: {
       name: "dagger",
       damage: 4,
+      vary: 1,
       hands: 1
     },
     broadsword: {
       name: "broad sword",
       damage: 14,
+      vary: 2,
       hands: 2
     },
     warAxe: {
       name: "war axe",
       damage: 18,
+      vary: 3,
       hands: 2
     }
   };

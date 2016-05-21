@@ -11,8 +11,9 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.Character.prototype.attack = function(enemy) {
-    enemy.health -= this.weapon.damage;
-    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${this.weapon.damage} damage.`);
+    let weapDamage = this.weapon.swing()
+    enemy.health -= weapDamage;
+    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
     if(!enemy.isAlive()) {
       console.log("Victory:", `${enemy.name} is defeated!`);
     }
