@@ -6,63 +6,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gauntlet</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Architects+Daughter|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/gauntlet.css">
   </head>
 
   <body>
-   <div id="combat-screen" class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 id="game-headline">GAUNTLET.</h1>
+
+    <div id="select-screen" class="container">
+      <div id="select-content">
+        <div class="row">
+          <h1 class="col-xs-12">WELCOME TO GAUNTLET!</h1>
+        </div>
+        <div class="row">
+          <h3 class="col-xs-12">CHOOSE YOUR FIGHTER!</h3>
+        </div>
+        <div class="row">
+          <label class="col-xs-12">NAME:</label>
+          <input class="col-xs-8 col" type="text">
+          <label class="col-xs-12">SPECIES:</label>
+          <select id="species-select" class="col-xs-8 col"></select>
+          <label class="col-xs-12">CLASS:</label>
+          <select id="class-select" class="col-xs-8 col"></select>
+          <label class="col-xs-12">WEAPON:</label>
+          <select id="weapon-select" class="col-xs-8 col"></select>
+        </div>
+        <div id="select-buttons" class="row">
+          <div class="col-xs-6 text-center">
+            <button id="random-button" class="button" type="button">RANDOM!</button>
+          </div>
+          <div class="col-xs-6 text-center">
+            <button id="fight-button" class="button" type="button">FIGHT!</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="player-headlines" class="row">
-      <div id="player-one" class="col-xs-5">
-        <h2>Player 1</h2>
+    <div id="combat-screen" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 id="game-headline">GAUNTLET.</h1>
+        </div>
       </div>
-      <div class="col-xs-2"></div>
-      <div id="player-two" class="col-xs-5">
-        <h2>Player 2</h2>
+
+      <div class="row player-headlines">
+        <div class="col-xs-5">
+          <h2>Player 1</h2>
+        </div>
+        <div class="col-xs-2"></div>
+        <div class="col-xs-5">
+          <h2>Enemy</h2>
+        </div>
       </div>
+
+      <div id="battleground" class="row">
+        <div class="player-image col-xs-5">
+
+        </div>
+        <div id="attack-area" class="col-xs-2">
+          <button id="attack-button" class="button" type="button">ATTACK!</button>
+        </div>
+        <div class="enemy-image col-xs-5">
+
+        </div>
+      </div>
+
+      <div id="player-attributes" class="row">
+        <div class="col-xs-5 player">
+          <ul class="stats">
+            <li><span class="stat-name">Name:</span><span class="stat player-name"></span></li>
+            <li><span class="stat-name">Species:</span><span class="stat player-species"></span></li>
+            <li><span class="stat-name">HP:</span><span class="stat player-hp"></span></li>
+            <li><span class="stat-name">Weapon:</span><span class="stat player-weapon"></span></li>
+          </ul>
+        </div>
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-5 enemy">
+          <ul class="stats">
+            <li><span class="stat-name">Name:</span><span class="stat enemy-name"></span></li>
+            <li><span class="stat-name">Species:</span><span class="stat enemy-species"></span></li>
+            <li><span class="stat-name">HP:</span><span class="stat enemy-hp"></span></li>
+            <li><span class="stat-name">Weapon:</span><span class="stat enemy-weapon"></span></li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-
-    <div id="battleground" class="row">
-      <div class="player-image col-xs-5">
-
-      </div>
-      <div id="attack-area" class="col-xs-2">
-        <button id="attack-button" type="button">ATTACK!</button>
-      </div>
-      <div class="enemy-image col-xs-5">
-
-      </div>
-
-    </div>
-
-    <div id="player-attributes" class="row">
-      <div class="col-xs-5 player">
-        <ul class="stats">
-          <li><span class="stat-name">Name:</span><span class="stat player-name"></span></li>
-          <li><span class="stat-name">Species:</span><span class="stat player-species"></span></li>
-          <li><span class="stat-name">HP:</span><span class="stat player-hp"></span></li>
-          <li><span class="stat-name">Weapon:</span><span class="stat player-weapon"></span></li>
-        </ul>
-      </div>
-      <div class="col-xs-2">
-      </div>
-      <div class="col-xs-5 enemy">
-        <ul class="stats">
-          <li><span class="stat-name">Name:</span><span class="stat enemy-name"></span></li>
-          <li><span class="stat-name">Species:</span><span class="stat enemy-species"></span></li>
-          <li><span class="stat-name">HP:</span><span class="stat enemy-hp"></span></li>
-          <li><span class="stat-name">Weapon:</span><span class="stat enemy-weapon"></span></li>
-        </ul>
-      </div>
-
-    </div>
-   </div>
 
     <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/characters.js" type="text/javascript"></script>

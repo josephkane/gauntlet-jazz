@@ -3,10 +3,11 @@
 }
 
 body {
-  font-family: "Lato", "Helvetica", "sans-serif";
+  font-family: "Indie Flower", "Helvetica", "sans-serif";
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background: url(../img/gauntlet1.jpg) no-repeat top;
+  background-size: cover;
 }
 
 ul {
@@ -14,18 +15,61 @@ ul {
 	padding-left: 0;
 }
 
+.button {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.button:hover {
+	background-color: #ea0f38;
+	color: white;
+}
+
+.text-center {
+	text-align: center
+}
+
+.combat {
+	background: url(../img/gauntlet2.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.row {
+	margin: 0;
+}
+
+
 /*------------------
 
-LAYOUT STYLES
+SELECT LAYOUT STYLES
 
 -------------------*/
 
-/*.row {
-	border: 1px dotted red;
-}*/
+#select-content {
+	width: 55%;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: rgba(245, 245, 245, .7);
+	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
+}
 
-#game-headline {
-	text-align: center;
+#select-buttons {
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+.col {
+	margin-bottom: 20px;
+}
+
+/*------------------
+
+COMBAT LAYOUT STYLES
+
+-------------------*/
+
+#combat-screen {
+	display: none;
 }
 
 .player-image,
@@ -51,8 +95,7 @@ LAYOUT STYLES
 }
 
 #attack-button:hover {
-	background-color: black;
-	color: white;
+
 }
 
 .stats {
