@@ -1,7 +1,6 @@
 "use strict";
 
 (function() {
-
   let $nameInput = $("#name-input");
   let $speciesSelect = $("#species-select");
   let $classSelect = $("#class-select");
