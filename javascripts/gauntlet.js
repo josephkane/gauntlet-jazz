@@ -17,8 +17,14 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.fight = function() {
-    if(stillFighting) { stillFighting = player.attack(enemy); }
-    if(stillFighting) { stillFighting = enemy.attack(player); }
+    if(stillFighting) {
+      stillFighting = player.attack(enemy);
+      gauntlet.View.playerAttack();
+    }
+    if(stillFighting) {
+      stillFighting = enemy.attack(player);
+      gauntlet.View.enemyAttack();
+    }
 
     return stillFighting;
   };

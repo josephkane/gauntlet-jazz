@@ -3,10 +3,10 @@
 var Gauntlet = (function(gauntlet) {
   let canvas = $("#field")[0];
   let ctx = canvas.getContext("2d");
+  let animations = [];
 
   let playerImg = $("#orc-img")[0];
   let enemyImg = $("#orc-img")[0];
-
 
   let playerCoord = {x: 10, y: 10};
   let enemyCoord = {x: canvas.width - 10, y: 10};
@@ -14,6 +14,7 @@ var Gauntlet = (function(gauntlet) {
 
   let playerAttacking = false;
   let enemyAttacking = false;
+
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -27,13 +28,19 @@ var Gauntlet = (function(gauntlet) {
     ctx.drawImage(enemyImg, -enemyCoord.x, enemyCoord.y, size.w, size.h);
     ctx.restore();
 
+    if(animations.length > 0) {
+      playerAttacking = animations[0].player;
+      enemyAttacking = animations[0].enemy;
+    }
+
     if(playerAttacking) {
       playerCoord.x += 5;
 
       if(playerCoord.x >= 750) {
         playerCoord.x = 10;
         playerAttacking = false;
-        enemyAttacking = true;
+        animations.shift();   //NOTE(adam): 0 element was player attacking
+        console.log("Player done attacking");
       }
     }
 
@@ -43,13 +50,17 @@ var Gauntlet = (function(gauntlet) {
       if(enemyCoord.x <= 150) {
         enemyCoord.x = canvas.width - 10;
         enemyAttacking = false;
-        playerAttacking = true;
+        animations.shift();   //NOTE(adam): 0 element was enemy attacking
+        console.log("Enemy done attacking");
       }
     }
   }
 
   setInterval(draw, 10);
-  playerAttacking = true;
+
+  gauntlet.View = {};
+  gauntlet.View.playerAttack = () => animations.push({player: true, enemy: false});
+  gauntlet.View.enemyAttack = () => animations.push({player: false, enemy: true});
 
   return gauntlet;
 }(Gauntlet || {}));
