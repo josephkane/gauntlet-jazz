@@ -24,40 +24,29 @@
         </div>
         <div class="row">
           <label class="col-xs-12">NAME:</label>
-          <input class="col-xs-8 col" type="text">
+          <input id="name-input" class="col-xs-8 col" type="text">
           <label class="col-xs-12">SPECIES:</label>
           <select id="species-select" class="col-xs-8 col"></select>
           <label class="col-xs-12">CLASS:</label>
-          <select id="class-select" class="col-xs-8 col"></select>
+          <select id="class-select" class="col-xs-8 col" disabled></select>
           <label class="col-xs-12">WEAPON:</label>
-          <select id="weapon-select" class="col-xs-8 col"></select>
+          <select id="weapon-select" class="col-xs-8 col" disabled></select>
         </div>
         <div id="select-buttons" class="row">
           <div class="col-xs-6 text-center">
             <button id="random-button" class="button" type="button">RANDOM!</button>
           </div>
           <div class="col-xs-6 text-center">
-            <button id="fight-button" class="button" type="button">FIGHT!</button>
+            <button id="fight-button" class="button" type="button" disabled>FIGHT!</button>
           </div>
         </div>
       </div>
     </div>
 
     <div id="combat-screen" class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 id="game-headline">GAUNTLET.</h1>
-        </div>
-      </div>
 
-      <div class="row player-headlines">
-        <div class="col-xs-5">
-          <h2>Player</h2>
-        </div>
-        <div class="col-xs-2"></div>
-        <div class="col-xs-5">
-          <h2>Enemy</h2>
-        </div>
+      <div class="row">
+        <h1 id="combat-headline" class="col-xs-12">FIGHT!</h1>
       </div>
 
       <div id="battleground" class="row">
@@ -67,33 +56,37 @@
           </div>
         </div>
 
-        <div class="col-xs-5"></div>
-        <div id="attack-area" class="col-xs-2">
-          <button id="attack-button" type="button">ATTACK!</button>
+        <div class="row">
+          <div class="col-xs-5"></div>
+          <div id="attack-area" class="col-xs-2">
+            <button id="attack-button" class="button" type="button">ATTACK!</button>
+          </div>
+          <div class="col-xs-5"></div>
         </div>
-        <div class="col-xs-5"></div>
 
       <div id="player-attributes" class="row">
-        <div class="col-xs-5 player">
+        <div class="col-xs-4 player text-center">
           <ul class="stats">
-            <li><span class="stat-name">Name:</span><span class="stat player-name"></span></li>
-            <li><span class="stat-name">Species:</span><span class="stat player-species"></span></li>
+            <li><span class="stat-name">NAME:</span><span class="stat player-name"></span></li>
             <li><span class="stat-name">HP:</span><span class="stat player-hp"></span></li>
-            <li><span class="stat-name">Weapon:</span><span class="stat player-weapon"></span></li>
+            <li><span class="stat-name">SPECIES:</span><span class="stat player-species"></span></li>
+            <li><span class="stat-name">CLASS:</span><span class="stat player-class"></span></li>
+            <li><span class="stat-name">WEAPON:</span><span class="stat player-weapon"></span></li>
           </ul>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-4">
         </div>
-        <div class="col-xs-5 enemy">
+        <div class="col-xs-4 enemy text-center">
           <ul class="stats">
-            <li><span class="stat-name">Name:</span><span class="stat enemy-name"></span></li>
-            <li><span class="stat-name">Species:</span><span class="stat enemy-species"></span></li>
+            <li><span class="stat-name">NAME:</span><span class="stat enemy-name"></span></li>
             <li><span class="stat-name">HP:</span><span class="stat enemy-hp"></span></li>
-            <li><span class="stat-name">Weapon:</span><span class="stat enemy-weapon"></span></li>
+            <li><span class="stat-name">SPECIES:</span><span class="stat enemy-species"></span></li>
+            <li><span class="stat-name">CLASS:</span><span class="stat enemy-class"></span></li>
+            <li><span class="stat-name">WEAPON:</span><span class="stat enemy-weapon"></span></li>
           </ul>
         </div>
       </div>
-
+    </div>
     </div>
 
     <img id="orc-img" src="/images/orc.gif" style="display: none">
