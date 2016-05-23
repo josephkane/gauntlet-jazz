@@ -29,15 +29,17 @@
     </div>
 
     <div id="battleground" class="row">
-      <div class="player-image col-xs-5">
-
+      <div class="row">
+        <div class="col-xs-12">
+          <canvas id="field" class="field-display" width="900" height="500"></canvas>
+        </div>
       </div>
+
+      <div class="col-xs-5"></div>
       <div id="attack-area" class="col-xs-2">
         <button id="attack-button" type="button">ATTACK!</button>
       </div>
-      <div class="enemy-image col-xs-5">
-
-      </div>
+      <div class="col-xs-5"></div>
 
     </div>
 
@@ -64,12 +66,15 @@
     </div>
    </div>
 
+    <img id="orc-img" src="/images/orc.gif" style="display: none">
+
     <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/characters.js" type="text/javascript"></script>
     <script src="/javascripts/species.js" type="text/javascript"></script>
     <script src="/javascripts/classes.js" type="text/javascript"></script>
     <script src="/javascripts/weapons.js" type="text/javascript"></script>
     <script src="/javascripts/spells.js" type="text/javascript"></script>
+    <script src="/javascripts/combat-view.js" type="text/javascript"></script>
     <script src="/javascripts/gauntlet.js" type="text/javascript"></script>
   </body>
 
