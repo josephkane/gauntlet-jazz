@@ -3,10 +3,11 @@
 }
 
 body {
-  font-family: "Lato", "Helvetica", "sans-serif";
+  font-family: "Indie Flower", "Helvetica", "sans-serif";
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background: url(../img/gauntlet1.jpg) no-repeat center;
+  background-size: cover;
 }
 
 ul {
@@ -28,12 +29,21 @@ ul {
 	text-align: center
 }
 
+.combat {
+	background: url(../img/gauntlet2.jpg) no-repeat center;
+  background-size: cover;
+}
+
 
 /*------------------
 
 SELECT LAYOUT STYLES
 
 -------------------*/
+
+#select-headline {
+	font-size: 4.5em;
+}
 
 .random-button {
 	margin: 20px 0;

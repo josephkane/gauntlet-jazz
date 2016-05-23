@@ -6,59 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gauntlet</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Architects+Daughter|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/gauntlet.css">
   </head>
 
   <body>
 
-  <div id="select-screen" class="container">
-    <h1 id="select-headline" class="text-center">CHOOSE YOUR FIGHTERS.</h1>
-    <div class="row player-headlines">
-      <div class="col-xs-5">
-        <h2>Player 1</h2>
+    <div id="select-screen" class="container">
+      <h1 id="select-headline">GAUNTLET!</h1>
+      <div class="row player-headline">
       </div>
-      <div class="col-xs-2"></div>
-      <div class="col-xs-5">
-        <h2>Enemy</h2>
+
+      <div class="row select-attributes">
+        <div class="row col-xs-5">
+          <div class="col-xs-12">
+            <h2>CHOOSE YOUR FIGHTER!</h2>
+          </div>
+          <label class="col-xs-12">NAME:</label>
+          <input id="player-name" class="col-xs-12" type="text" autofocus>
+          <label class="col-xs-12">SPECIES:</label>
+          <select id="player-species" class="col-xs-12"></select>
+          <label class="col-xs-12">CLASS:</label>
+          <select id="player-class" class="class-select col-xs-12"></select>
+          <div class="col-xs-12"><button id="player-random" class="random-button button" type="button">RANDOM</button></div>
+        <div class="col-xs-12 text-center">
+          <button id="fight-button" class="button" type="button">FIGHT!</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="row">
       </div>
     </div>
-
-    <div class="row select-attributes">
-      <div class="row col-xs-5">
-        <label class="col-xs-12">Name:</label>
-        <input id="player-name" class="col-xs-12" type="text" autofocus>
-        <label class="col-xs-12">Species:</label>
-        <select id="player-species" class="col-xs-12"></select>
-        <label class="col-xs-12">Class:</label>
-        <select id="player-class" class="class-select col-xs-12"></select>
-        <div class="col-xs-12 text-center"><button id="player-random" class="random-button button" type="button">RANDOM</button></div>
-      </div>
-
-      <div class="col-xs-2"></div>
-
-      <div class="col-xs-5">
-        <label class="col-xs-12">Name:</label>
-        <input id="enemy-name" class="col-xs-12" type="text" autofocus>
-        <label class="col-xs-12">Species:</label>
-        <select id="enemy-species" class="species-select col-xs-12"></select>
-        <label class="col-xs-12">Class:</label>
-        <select id="enemy-class" class="class-select col-xs-12"></select>
-        <div class="col-xs-12 text-center"><button id="enemy-random" class="random-button button" type="button">RANDOM</button></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <button id="fight-button" class="button" type="button">FIGHT!</button>
-      </div>
-    </div>
-  </div>
 
     <div id="combat-screen" class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h1 id="game-headline" class="text-center">GAUNTLET.</h1>
+          <h1 id="game-headline">GAUNTLET.</h1>
         </div>
       </div>
 
