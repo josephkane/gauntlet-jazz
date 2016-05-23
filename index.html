@@ -51,7 +51,7 @@
 
       <div class="row player-headlines">
         <div class="col-xs-5">
-          <h2>Player 1</h2>
+          <h2>Player</h2>
         </div>
         <div class="col-xs-2"></div>
         <div class="col-xs-5">
@@ -60,16 +60,17 @@
       </div>
 
       <div id="battleground" class="row">
-        <div class="player-image col-xs-5">
-
+        <div class="row">
+          <div id="field-container" class="col-xs-12">
+            <canvas id="field" class="field-display" width="900" height="500"></canvas>
+          </div>
         </div>
+
+        <div class="col-xs-5"></div>
         <div id="attack-area" class="col-xs-2">
-          <button id="attack-button" class="button" type="button">ATTACK!</button>
+          <button id="attack-button" type="button">ATTACK!</button>
         </div>
-        <div class="enemy-image col-xs-5">
-
-        </div>
-      </div>
+        <div class="col-xs-5"></div>
 
       <div id="player-attributes" class="row">
         <div class="col-xs-5 player">
@@ -94,14 +95,17 @@
 
     </div>
 
+    <img id="orc-img" src="/images/orc.gif" style="display: none">
+
     <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/characters.js" type="text/javascript"></script>
     <script src="/javascripts/species.js" type="text/javascript"></script>
     <script src="/javascripts/classes.js" type="text/javascript"></script>
     <script src="/javascripts/weapons.js" type="text/javascript"></script>
     <script src="/javascripts/spells.js" type="text/javascript"></script>
-    <script src="/javascripts/display.js" type="text/javascript" charset="utf-8" async defer></script> <!-- test -->
+    <script src="/javascripts/view.js" type="text/javascript"></script>
     <script src="/javascripts/gauntlet.js" type="text/javascript"></script>
+    <script src="/javascripts/display.js" type="text/javascript"></script>
   </body>
 
 </html>
