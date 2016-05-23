@@ -61,6 +61,13 @@
     $fightButton[0].disabled = (e.target.value === "" || $weaponSelect[0].value === "");
   });
 
+  function switchScreens () {
+    $("#select-screen").hide();
+    $("body").addClass("combat");
+    $("#combat-screen").show();
+    updateStats();
+  };
+
   $speciesSelect.change(function(e) {
     populateClasses(e.target.value);
     $weaponSelect.html(`<option disabled selected value></option>`);
@@ -83,8 +90,9 @@
   $randomButton.click(function () {
     var randomPlayer = Gauntlet.Character.randomCharacter(randomNameArray);
     var randomEnemy = Gauntlet.Character.randomCharacter(enemyNameArray);
-    console.log("player: ", randomPlayer);
-    console.log("enemy: ", randomEnemy);
+    Gauntlet.setPlayer(randomPlayer);
+    Gauntlet.setEnemy(randomEnemy);
+    switchScreens();
   });
 
   $fightButton.click(function() {
@@ -96,17 +104,15 @@
     });
 
     //TODO(adam): make random
-    Gauntlet.setEnemy({
-      name: "Steve",
-      speciesId: "orc",
-      classId: "warrior",
-      weaponId: "warAxe"
-    });
-
-    $("#select-screen").hide();
-    $("body").addClass("combat");
-    $("#combat-screen").show();
-    updateStats();
+    // Gauntlet.setEnemy({
+    //   name: "Steve",
+    //   speciesId: "orc",
+    //   classId: "warrior",
+    //   weaponId: "warAxe"
+    // });
+    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(enemyNameArray));
+    switchScreens();
   });
+
 
 }());
