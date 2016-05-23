@@ -22,12 +22,12 @@ var Gauntlet = (function(gauntlet) {
   let spells = {
     sphere: {
       name: "Sphere",
-      damageCalc: Math.floor(Math.random() * 10 + 10),  //TODO(adam): convert to function
+      damageCalc: () => Math.floor(Math.random() * 10 + 10),  //TODO(adam): convert to function
       type: "random"
     },
     firewall: {
       name: "Fire Wall",
-      damageCalc: Math.floor(Math.random() * 12 + 14),  //TODO(adam): convert to function
+      damageCalc: () => Math.floor(Math.random() * 12 + 14),  //TODO(adam): convert to function
       type: "random"
     }
   };
@@ -37,3 +37,4 @@ var Gauntlet = (function(gauntlet) {
 
 console.log("Gauntlet.Spell.random() =  ", Gauntlet.Spell.random());
 // console.log("Gauntlet.Spell.constructSpell(sphere)", Gauntlet.Spell.constructSpell("sphere"));
+console.log("Spell:", Gauntlet.Spell.constructSpell("sphere").damageCalc());
