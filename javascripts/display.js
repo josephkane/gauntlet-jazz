@@ -2,20 +2,25 @@
 
 (function() {
 
-  var jim = Gauntlet.getPlayer();
-  var steve = Gauntlet.getEnemy();
-  console.log("jim = ", jim);
+  function updateStats() {
+    let player = Gauntlet.getPlayer();
+    let enemy = Gauntlet.getEnemy();
 
-  $(".player-name").html(` ${jim.name}`);
-  $(".player-species").html(` ${jim.species.name}`);
-  $(".player-hp").html(` ${jim.health}`);
-  $(".player-weapon").html(` ${jim.weapon.name}`);
+    $(".player-name").html(` ${player.name}`);
+    $(".player-species").html(` ${player.species.name}`);
+    $(".player-hp").html(` ${player.health}`);
+    $(".player-weapon").html(` ${player.weapon.name}`);
 
-  $(".enemy-name").html(` ${steve.name}`);
-  $(".enemy-species").html(` ${steve.species.name}`);
-  $(".enemy-hp").html(` ${steve.health}`);
-  $(".enemy-weapon").html(` ${steve.weapon.name}`);
+    $(".enemy-name").html(` ${enemy.name}`);
+    $(".enemy-species").html(` ${enemy.species.name}`);
+    $(".enemy-hp").html(` ${enemy.health}`);
+    $(".enemy-weapon").html(` ${enemy.weapon.name}`);
+  }
 
+  $("#attack-button").click(function() {
+    Gauntlet.fight();
+    updateStats();
+  });
 
   let speciesList = Gauntlet.Species.getSpeciesList();
   let classList = Gauntlet.PlayerClass.getClassList();
@@ -37,9 +42,19 @@
       classId: $classSelect.val(),
       weaponId: $weaponSelect.val()
     });
+
+    //TODO(adam): make random
+    Gauntlet.setEnemy({
+      name: "Steve",
+      speciesId: "orc",
+      classId: "warrior",
+      weaponId: "warAxe"
+    });
+
     $("#select-screen").hide();
     $("body").addClass("combat");
     $("#combat-screen").show();
+    updateStats();
   });
 
 }());
