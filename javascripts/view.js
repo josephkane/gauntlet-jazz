@@ -10,7 +10,7 @@ var Gauntlet = (function(gauntlet) {
 
   let playerCoord = {x: 10, y: 10};
   let enemyCoord = {x: canvas.width - 10, y: 10};
-  let size = {w: 100, h: 100};
+  let size = {w: 200, h: 200};
 
   let playerAttacking = false;
   let enemyAttacking = false;
@@ -34,9 +34,9 @@ var Gauntlet = (function(gauntlet) {
     }
 
     if(playerAttacking) {
-      playerCoord.x += 5;
+      playerCoord.x += 10;
 
-      if(playerCoord.x >= 750) {
+      if(playerCoord.x >= 650) {
         playerCoord.x = 10;
         playerAttacking = false;
         animations.shift();   //NOTE(adam): 0 element was player attacking
@@ -44,9 +44,9 @@ var Gauntlet = (function(gauntlet) {
     }
 
     if(enemyAttacking) {
-      enemyCoord.x -= 5;
+      enemyCoord.x -= 10;
 
-      if(enemyCoord.x <= 150) {
+      if(enemyCoord.x <= 250) {
         enemyCoord.x = canvas.width - 10;
         enemyAttacking = false;
         animations.shift();   //NOTE(adam): 0 element was enemy attacking
