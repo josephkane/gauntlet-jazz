@@ -32,6 +32,9 @@ var Gauntlet = (function(gauntlet) {
   return gauntlet;
 }(Gauntlet || {}));
 
+//NOTE(adam): global function to get random element from array
+let getRandElem = (idArray) => idArray[Math.floor(Math.random()*idArray.length)];
+
 
 //NOTE(adam): example combat setup
 Gauntlet.setPlayer({

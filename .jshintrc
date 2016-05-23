@@ -19,6 +19,7 @@
   "globalstrict": true,
   "globals": {
     "test": false,
-    "Gauntlet": true
+    "Gauntlet": false,
+    "getRandElem": false
   }
 }
