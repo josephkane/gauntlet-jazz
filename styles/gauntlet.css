@@ -4,6 +4,7 @@
 
 body {
   font-family: "Indie Flower", "Helvetica", "sans-serif";
+  font-weight: bold;
   margin: 0;
   padding: 0;
   background: url(../img/gauntlet2.jpg) no-repeat top;
@@ -82,6 +83,16 @@ COMBAT LAYOUT STYLES
 	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
 }
 
+#field {
+	height: 250px;
+	width: 90%;
+}
+
+#combat-headline {
+	margin: 50px 0 20px 0;
+	padding-left: 70px;
+}
+
 #attack-area {
 	/*margin-top: 100px;*/
 	padding: 3px 10px;
@@ -91,6 +102,23 @@ COMBAT LAYOUT STYLES
 	text-align: center;
 	padding: 10px 5px;
 	width: 100%;
+	font-size: 1.3em;
+}
+
+#player-attributes {
+	margin: 0 20px;
+	font-size: 1.3em;
+}
+
+.player,
+.enemy {
+	border-radius: 10px;
+	background-color: rgba(245, 245, 245, .7);
+	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
+}
+
+.stat-name {
+	text-decoration: underline;
 }
 
 .stats {
