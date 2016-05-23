@@ -34,24 +34,3 @@ var Gauntlet = (function(gauntlet) {
 
 //NOTE(adam): global function to get random element from array
 let getRandElem = (idArray) => idArray[Math.floor(Math.random()*idArray.length)];
-
-
-//NOTE(adam): example combat setup
-Gauntlet.setPlayer({
-    name: "Jim",
-    speciesId: "human",
-    classId: "berserker",
-    weaponId: "broadsword"
-  });
-
-Gauntlet.setEnemy({
-    name: "Steve",
-    speciesId: "orc",
-    classId: "warrior",
-    weaponId: "warAxe"
-  });
-
-// while(Gauntlet.fight()) {}
-
-console.log("Gauntlet.getPlayer()", Gauntlet.getPlayer());
-console.log("Gauntlet.getEnemy()", Gauntlet.getEnemy());
