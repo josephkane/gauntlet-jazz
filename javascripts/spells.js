@@ -1,16 +1,15 @@
+/* globals getRandElem */
 "use strict";
 
 var Gauntlet = (function(gauntlet) {
   let spellTypes = ["lightning", "fire", "water", "earth", "mysticism"];
-
-  let getRandId = (idArray) => idArray[Math.floor(Math.random()*idArray.length)];
 
   gauntlet.Spell = function() {};
 
   gauntlet.Spell.constructSpell = function(spellId) {
     let spell = new gauntlet.Spell();
     if(spellId === "random") {
-      spellId = getRandId(Object.keys(spells));
+      spellId = getRandElem(Object.keys(spells));
     }
     Object.assign(spell, spells[spellId]);
     return spell;
