@@ -2,6 +2,15 @@
 
 (function() {
 
+  $(document).ready(function () {
+    $("#combat-screen").hide()
+  });
+
+  $("#fight-button").click(function () {
+    $("#select-screen").hide();
+    $("#combat-screen").show();
+  });
+
   $("#attack-button").click(function () {
     Gauntlet.fight();
     updateStats();

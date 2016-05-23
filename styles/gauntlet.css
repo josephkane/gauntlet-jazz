@@ -30,7 +30,7 @@ ul {
 }
 
 .combat {
-	background: url(../img/gauntlet2.jpg) no-repeat center;
+	background: url(../img/gauntlet2.jpg) no-repeat top;
   background-size: cover;
 }
 
@@ -68,9 +68,9 @@ COMBAT LAYOUT STYLES
 
 -------------------*/
 
-#select-screen {
+/*#select-screen {
 	display: none;
-}
+}*/
 
 #field-container {
 	text-align: center;
