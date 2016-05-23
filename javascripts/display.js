@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+function updateStats() {
   
   var jim = Gauntlet.getPlayer();
   var steve = Gauntlet.getEnemy();
@@ -15,6 +15,6 @@
   $(".enemy-species").html(` ${steve.species.name}`);
   $(".enemy-hp").html(` ${steve.health}`);
   $(".enemy-weapon").html(` ${steve.weapon.name}`);
-}());
+}
 
 // $("player-1-name").html(details.name);
