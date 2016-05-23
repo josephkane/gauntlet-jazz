@@ -6,7 +6,7 @@ body {
   font-family: "Indie Flower", "Helvetica", "sans-serif";
   margin: 0;
   padding: 0;
-  background: url(../img/gauntlet1.jpg) no-repeat center;
+  background: url(../img/gauntlet1.jpg) no-repeat top;
   background-size: cover;
 }
 
@@ -41,12 +41,12 @@ SELECT LAYOUT STYLES
 
 -------------------*/
 
-#select-headline {
-	font-size: 4.5em;
-}
-
-.random-button {
-	margin: 20px 0;
+#select-content {
+	width: 50%;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, .5);
+	box-shadow: 0 0 5px 5px rgba(255, 255, 255, .5);
 }
 
 /*------------------
