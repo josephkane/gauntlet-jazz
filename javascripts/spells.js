@@ -19,20 +19,15 @@ var Gauntlet = (function(gauntlet) {
   let spells = {
     sphere: {
       name: "Sphere",
-      damageCalc: () => Math.floor(Math.random() * 10 + 10),  //TODO(adam): convert to function
+      damageCalc: () => Math.floor(Math.random() * 10 + 10),
       type: "random"
     },
     firewall: {
       name: "Fire Wall",
-      damageCalc: () => Math.floor(Math.random() * 12 + 14),  //TODO(adam): convert to function
-      type: "random"
+      damageCalc: () => Math.floor(Math.random() * 12 + 14),
+      type: "fire"
     }
   };
 
   return gauntlet;
 }(Gauntlet || {}));
-
-// console.log("Gauntlet.Spell.constructSpell(sphere)", Gauntlet.Spell.constructSpell("sphere"));
-let spell = Gauntlet.Spell.constructSpell("random");
-console.log("spell", spell);
-console.log("SpellDamage:", spell.damageCalc());
