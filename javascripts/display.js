@@ -1,11 +1,11 @@
 "use strict";
 
 (function() {
-  
+
   var jim = Gauntlet.getPlayer();
   var steve = Gauntlet.getEnemy();
   console.log("jim = ", jim);
-  
+
   $(".player-name").html(` ${jim.name}`);
   $(".player-species").html(` ${jim.species.name}`);
   $(".player-hp").html(` ${jim.health}`);

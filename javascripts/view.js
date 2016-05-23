@@ -18,7 +18,7 @@ var Gauntlet = (function(gauntlet) {
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle ="tan";
+    ctx.fillStyle = "rgba(245, 245, 245, .7)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(playerImg, playerCoord.x, playerCoord.y, size.w, size.h);

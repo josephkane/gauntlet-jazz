@@ -51,7 +51,7 @@ Gauntlet.setEnemy({
     weaponId: "warAxe"
   });
 
-while(Gauntlet.fight()) {}
+// while(Gauntlet.fight()) {}
 
 console.log("Gauntlet.getPlayer()", Gauntlet.getPlayer());
 console.log("Gauntlet.getEnemy()", Gauntlet.getEnemy());

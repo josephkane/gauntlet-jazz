@@ -4,6 +4,7 @@
 
 body {
   font-family: "Indie Flower", "Helvetica", "sans-serif";
+  font-weight: bold;
   margin: 0;
   padding: 0;
   background: url(../img/gauntlet1.jpg) no-repeat top;
@@ -30,7 +31,7 @@ ul {
 }
 
 .combat {
-	background: url(../img/gauntlet2.jpg) no-repeat center;
+	background: url(../img/gauntlet2.jpg) no-repeat top;
   background-size: cover;
 }
 
@@ -77,9 +78,19 @@ COMBAT LAYOUT STYLES
 }
 
 .field-display {
-	border: 1px solid black;
-	background-color: white;
-	box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
+}
+
+#field {
+	height: 250px;
+	width: 90%;
+}
+
+#combat-headline {
+	margin: 50px 0 20px 0;
+	padding-left: 70px;
 }
 
 #attack-area {
@@ -88,16 +99,26 @@ COMBAT LAYOUT STYLES
 }
 
 #attack-button {
-	border: 1px solid black;
-	border-radius: 5px;
 	text-align: center;
 	padding: 10px 5px;
-	background-color: white;
 	width: 100%;
+	font-size: 1.3em;
 }
 
-#attack-button:hover {
+#player-attributes {
+	margin: 0 20px;
+	font-size: 1.3em;
+}
 
+.player,
+.enemy {
+	border-radius: 10px;
+	background-color: rgba(245, 245, 245, .7);
+	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
+}
+
+.stat-name {
+	text-decoration: underline;
 }
 
 .stats {
