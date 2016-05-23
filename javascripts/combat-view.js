@@ -4,10 +4,8 @@ var Gauntlet = (function(gauntlet) {
   let canvas = $("#field")[0];
   let ctx = canvas.getContext("2d");
 
-  //NOTE(adam): caching to prevent NaN issues
-  let canvasSize = {w: canvas.width, h: canvas.height};
-
-  let orcImg = $("#orc-img")[0];
+  let playerImg = $("#orc-img")[0];
+  let enemyImg = $("#orc-img")[0];
 
 
   let playerCoord = {x: 10, y: 10};
@@ -22,11 +20,11 @@ var Gauntlet = (function(gauntlet) {
     ctx.fillStyle ="tan";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.drawImage(orcImg, playerCoord.x, playerCoord.y, size.w, size.h);
+    ctx.drawImage(playerImg, playerCoord.x, playerCoord.y, size.w, size.h);
 
     ctx.save();
     ctx.scale(-1, 1);
-    ctx.drawImage(orcImg, -enemyCoord.x, enemyCoord.y, size.w, size.h);
+    ctx.drawImage(enemyImg, -enemyCoord.x, enemyCoord.y, size.w, size.h);
     ctx.restore();
 
     if(playerAttacking) {
@@ -43,7 +41,7 @@ var Gauntlet = (function(gauntlet) {
       enemyCoord.x -= 5;
 
       if(enemyCoord.x <= 150) {
-        enemyCoord.x = canvasSize.w - 10;
+        enemyCoord.x = canvas.width - 10;
         enemyAttacking = false;
         playerAttacking = true;
       }
