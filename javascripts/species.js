@@ -9,6 +9,14 @@ var Gauntlet = (function (gauntlet) {
 		return species;
 	};
 
+  gauntlet.Species.getSpeciesList = function() {
+    let list = [];
+    for(let spec in speciesData) {
+      list.push({id: spec, name: speciesData[spec].name});
+    }
+    return list;
+  };
+
 
 	let speciesData = {
 		human: {

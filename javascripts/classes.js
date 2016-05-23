@@ -16,6 +16,15 @@ var Gauntlet = (function(gauntlet) {
     return playerClass;
   };
 
+  gauntlet.PlayerClass.getClassList = function() {
+    let list = [];
+    for(let cls in classes) {
+      list.push({id: cls, name: classes[cls].name});
+    }
+    return list;
+  };
+
+
 
   let fighter = {
     name: "Fighter",
