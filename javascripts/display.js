@@ -38,6 +38,7 @@
       weaponId: $weaponSelect.val()
     });
     $("#select-screen").hide();
+    $("body").addClass("combat");
     $("#combat-screen").show();
   });
 
