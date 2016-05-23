@@ -17,13 +17,15 @@
     let enemy = Gauntlet.getEnemy();
 
     $(".player-name").html(` ${player.name}`);
-    $(".player-species").html(` ${player.species.name}`);
     $(".player-hp").html(` ${player.health}`);
+    $(".player-species").html(` ${player.species.name}`);
+    $(".player-class").html(` ${player.class.name}`);
     $(".player-weapon").html(` ${player.weapon.name}`);
 
     $(".enemy-name").html(` ${enemy.name}`);
-    $(".enemy-species").html(` ${enemy.species.name}`);
     $(".enemy-hp").html(` ${enemy.health}`);
+    $(".enemy-species").html(` ${enemy.species.name}`);
+    $(".enemy-class").html(` ${enemy.class.name}`);
     $(".enemy-weapon").html(` ${enemy.weapon.name}`);
   }
 
