@@ -45,8 +45,14 @@ var Gauntlet = (function(gauntlet) {
     if(!allowedWeapons) {
       allowedWeapons = Gauntlet.Weapon.getWeaponList();
     };
-    let randomWeapon = getRandElem(allowedWeapons)
-    console.log(randomWeapon);
+    let randomWeapon = getRandElem(allowedWeapons);
+    let randomCharacter = {
+      name: randomName,
+      speciesId: randomSpecies.id,
+      classId: randomClass.id,
+      weaponId: randomWeapon.id
+    };
+    return randomCharacter;
   };
 
   return gauntlet;

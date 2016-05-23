@@ -81,7 +81,10 @@
   });
 
   $randomButton.click(function () {
-    Gauntlet.Character.randomCharacter(randomNameArray);
+    var randomPlayer = Gauntlet.Character.randomCharacter(randomNameArray);
+    var randomEnemy = Gauntlet.Character.randomCharacter(enemyNameArray);
+    console.log("player: ", randomPlayer);
+    console.log("enemy: ", randomEnemy);
   });
 
   $fightButton.click(function() {
