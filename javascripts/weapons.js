@@ -17,6 +17,16 @@ var Gauntlet = (function(gauntlet) {
     return weapon;
   };
 
+  gauntlet.Weapon.getWeaponData = (weaponId) => weapons[weaponId];
+
+  gauntlet.Weapon.getWeaponList = function() {
+    let list = [];
+    for(let weap in weapons) {
+      list.push({id: weap, name: weapons[weap].name});
+    }
+    return list;
+  };
+
 
   //NOTE(adam): weapon data by id
   let weapons = {
