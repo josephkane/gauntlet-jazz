@@ -2,6 +2,16 @@
 
 (function() {
 
+  let $nameInput = $("#name-input");
+  let $speciesSelect = $("#species-select");
+  let $classSelect = $("#class-select");
+  let $weaponSelect = $("#weapon-select");
+  let $fightButton = $("#fight-button");
+
+  let speciesList = Gauntlet.Species.getSpeciesList();
+  let classList = Gauntlet.PlayerClass.getClassList();
+  let weaponList = Gauntlet.Weapon.getWeaponList();
+
   function updateStats() {
     let player = Gauntlet.getPlayer();
     let enemy = Gauntlet.getEnemy();
@@ -22,20 +32,47 @@
     updateStats();
   });
 
-  let speciesList = Gauntlet.Species.getSpeciesList();
-  let classList = Gauntlet.PlayerClass.getClassList();
-  let weaponList = Gauntlet.Weapon.getWeaponList();
-
-  let $nameInput = $("#name-input");
-  let $speciesSelect = $("#species-select");
-  let $classSelect = $("#class-select");
-  let $weaponSelect = $("#weapon-select");
-
   speciesList.forEach(e => $speciesSelect.append(`<option value=${e.id}>${e.name}</option>`));
-  classList.forEach(e => $classSelect.append(`<option value=${e.id}>${e.name}</option>`));
-  weaponList.forEach(e => $weaponSelect.append(`<option value=${e.id}>${e.name}</option>`));
 
-  $("#fight-button").click(function() {
+  function populateClasses(species) {
+    let allowed = Gauntlet.Species.getSpeciesData(species).allowedClasses;
+    if(!allowed) {
+      allowed = classList;
+    }
+    allowed.forEach(e => $classSelect.append(`<option value=${e.id}>${e.name}</option>`));
+  }
+
+  function populateWeapons(playerClass) {
+    let allowed = Gauntlet.PlayerClass.getClassData(playerClass).allowedWeapons;
+    if(!allowed) {
+      allowed = weaponList;
+    }
+    allowed.forEach(e => $weaponSelect.append(`<option value=${e.id}>${e.name}</option>`));
+  }
+
+  $nameInput.change(function(e) {
+    $fightButton[0].disabled = !(e.target.value.legnt > 0 && $weaponSelect[0].selectedIndex > -1);
+  });
+
+  $speciesSelect.change(function(e) {
+    populateClasses(e.target.value);
+    $classSelect[0].disabled = false;
+    $classSelect.selectedIndex = -1;
+    $weaponSelect[0].disabled = true;
+    $weaponSelect.selectedIndex = -1;
+  });
+
+  $classSelect.change(function(e) {
+    populateWeapons(e.target.value);
+    $weaponSelect[0].disabled = false;
+    $weaponSelect.selectedIndex = -1;
+  });
+
+  $weaponSelect.change(function() {
+    $fightButton[0].disabled = !($nameInput[0].value.length > 0);
+  });
+
+  $fightButton.click(function() {
     Gauntlet.setPlayer({
       name: $nameInput.val(),
       speciesId: $speciesSelect.val(),

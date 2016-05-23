@@ -40,7 +40,6 @@ var Gauntlet = (function(gauntlet) {
         playerCoord.x = 10;
         playerAttacking = false;
         animations.shift();   //NOTE(adam): 0 element was player attacking
-        console.log("Player done attacking");
       }
     }
 
@@ -51,7 +50,6 @@ var Gauntlet = (function(gauntlet) {
         enemyCoord.x = canvas.width - 10;
         enemyAttacking = false;
         animations.shift();   //NOTE(adam): 0 element was enemy attacking
-        console.log("Enemy done attacking");
       }
     }
   }
