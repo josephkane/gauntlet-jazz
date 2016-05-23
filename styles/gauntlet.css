@@ -49,10 +49,6 @@ COMBAT LAYOUT STYLES
 	display: none;
 }
 
-#game-headline {
-	text-align: center;
-}
-
 .player-image,
 .enemy-image {
 	min-height: 250px;
