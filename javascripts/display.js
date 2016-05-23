@@ -32,6 +32,7 @@
     updateStats();
   });
 
+  $speciesSelect.html(`<option disabled selected value></option>`);
   speciesList.forEach(e => $speciesSelect.append(`<option value=${e.id}>${e.name}</option>`));
 
   function populateClasses(species) {
@@ -39,6 +40,7 @@
     if(!allowed) {
       allowed = classList;
     }
+    $classSelect.html(`<option disabled selected value></option>`);
     allowed.forEach(e => $classSelect.append(`<option value=${e.id}>${e.name}</option>`));
   }
 
@@ -47,15 +49,17 @@
     if(!allowed) {
       allowed = weaponList;
     }
+    $weaponSelect.html(`<option disabled selected value></option>`);
     allowed.forEach(e => $weaponSelect.append(`<option value=${e.id}>${e.name}</option>`));
   }
 
-  $nameInput.change(function(e) {
-    $fightButton[0].disabled = !(e.target.value.legnt > 0 && $weaponSelect[0].selectedIndex > -1);
+  $nameInput.keyup(function(e) {
+    $fightButton[0].disabled = (e.target.value === "" || $weaponSelect[0].value === "");
   });
 
   $speciesSelect.change(function(e) {
     populateClasses(e.target.value);
+    $weaponSelect.html(`<option disabled selected value></option>`);
     $classSelect[0].disabled = false;
     $classSelect.selectedIndex = -1;
     $weaponSelect[0].disabled = true;
@@ -69,7 +73,7 @@
   });
 
   $weaponSelect.change(function() {
-    $fightButton[0].disabled = !($nameInput[0].value.length > 0);
+    $fightButton[0].disabled = ($nameInput[0].value === "");
   });
 
   $fightButton.click(function() {
