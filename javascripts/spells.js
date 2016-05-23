@@ -7,17 +7,13 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.Spell.constructSpell = function(spellId) {
     let spell = new gauntlet.Spell();
+    if(spellId === "random") {
+      let spellsArray = Object.keys(spells);
+      spellId = spellsArray[Math.floor(Math.random()*spellsArray.length)];
+    }
     Object.assign(spell, spells[spellId]);
     return spell;
   };
-
-  gauntlet.Spell.random = function() {
-    // chose spelled based on randomly indexing into spells object.
-    var spellsArray = Object.keys(spells);
-    var selectedSpell = spellsArray[Math.floor(Math.random()*spellsArray.length)];
-    return gauntlet.Spell.constructSpell(selectedSpell);
-  };
-
 
   let spells = {
     sphere: {
@@ -35,6 +31,7 @@ var Gauntlet = (function(gauntlet) {
   return gauntlet;
 }(Gauntlet || {}));
 
-console.log("Gauntlet.Spell.random() =  ", Gauntlet.Spell.random());
 // console.log("Gauntlet.Spell.constructSpell(sphere)", Gauntlet.Spell.constructSpell("sphere"));
-console.log("Spell:", Gauntlet.Spell.constructSpell("sphere").damageCalc());
+let spell = Gauntlet.Spell.constructSpell("random");
+console.log("spell", spell);
+console.log("SpellDamage:", spell.damageCalc());
