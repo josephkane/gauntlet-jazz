@@ -14,15 +14,40 @@ ul {
 	padding-left: 0;
 }
 
+.button {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.button:hover {
+	background-color: black;
+	color: white;
+}
+
+.text-center {
+	text-align: center
+}
+
+
 /*------------------
 
-LAYOUT STYLES
+SELECT LAYOUT STYLES
 
 -------------------*/
 
-/*.row {
-	border: 1px dotted red;
-}*/
+.random-button {
+	margin: 20px 0;
+}
+
+/*------------------
+
+COMBAT LAYOUT STYLES
+
+-------------------*/
+
+#combat-screen {
+	display: none;
+}
 
 #game-headline {
 	text-align: center;
@@ -51,8 +76,7 @@ LAYOUT STYLES
 }
 
 #attack-button:hover {
-	background-color: black;
-	color: white;
+
 }
 
 .stats {
