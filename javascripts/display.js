@@ -6,6 +6,9 @@
   let $classSelect = $("#class-select");
   let $weaponSelect = $("#weapon-select");
   let $fightButton = $("#fight-button");
+  let $randomButton = $("#random-button");
+  let randomNameArray = ["Madonna", "Bullwinkle", "Lil' Sebastian", "Dale Earnhardt (RIP)", "Barbara Streisand"]
+  let enemyNameArray = ["Ryan 'Kill You With Kindness' Tanay", "Scott 'I'll Always Know More Than You' Humphries", "Greg 'Of Course I've Got Weed' Korte"];
 
   let speciesList = Gauntlet.Species.getSpeciesList();
   let classList = Gauntlet.PlayerClass.getClassList();
@@ -75,6 +78,10 @@
 
   $weaponSelect.change(function() {
     $fightButton[0].disabled = ($nameInput[0].value === "");
+  });
+
+  $randomButton.click(function () {
+    Gauntlet.Character.randomCharacter(randomNameArray);
   });
 
   $fightButton.click(function() {
