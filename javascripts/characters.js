@@ -14,9 +14,10 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Character.prototype.attack = function(enemy) {
     let weapDamage = this.weapon.swing()
     enemy.health -= weapDamage;
-    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
+    // console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
+    $("")
     if(!enemy.isAlive()) {
-      console.log("Victory:", `${enemy.name} is defeated!`);
+      // console.log("Victory:", `${enemy.name} is defeated!`);
     }
     return enemy.isAlive();
   };
@@ -36,12 +37,12 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Character.randomCharacter = function(name) {
     let randomName = getRandElem(name);
     let randomSpecies = getRandElem(gauntlet.Species.getSpeciesList());
-    let allowedClasses = Gauntlet.Species.getSpeciesList().allowedClasses;
+    let allowedClasses = randomSpecies.allowedClasses;
     if(!allowedClasses) {
       allowedClasses = Gauntlet.PlayerClass.getClassList();
     };
     let randomClass = getRandElem(allowedClasses);
-    let allowedWeapons = Gauntlet.PlayerClass.getClassList().allowedWeapons;
+    let allowedWeapons = randomClass.allowedWeapons;
     if(!allowedWeapons) {
       allowedWeapons = Gauntlet.Weapon.getWeaponList();
     };
