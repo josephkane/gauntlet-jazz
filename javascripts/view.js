@@ -15,12 +15,18 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.View.setPlayer = function() {
     player = gauntlet.getPlayer();
-    playerImg = $("#" + player.species.name)[0];
+    playerImg = $("#" + player.class.id)[0];
+    if(!playerImg) {
+      playerImg = $("#" + player.species.id)[0];
+    }
   };
 
   gauntlet.View.setEnemy = function() {
     enemy = gauntlet.getEnemy();
-    enemyImg = $("#" + enemy.species.name)[0];
+    enemyImg = $("#" + enemy.class.id)[0];
+    if(!enemyImg) {
+      enemyImg = $("#" + enemy.species.id)[0];
+    }
   };
 
   let playerCoord = {x: 10, y: 10};
@@ -31,10 +37,7 @@ var Gauntlet = (function(gauntlet) {
   let enemyAttacking = false;
 
   function draw() {
-    if(!(player && enemy && playerImg && enemyImg)) {
-      console.error("Draw", "Data net set.");
-      return;
-    }
+    if(!(player && enemy && playerImg && enemyImg)) { return; }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 

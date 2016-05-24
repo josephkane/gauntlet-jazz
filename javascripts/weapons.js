@@ -31,24 +31,28 @@ var Gauntlet = (function(gauntlet) {
   //NOTE(adam): weapon data by id
   let weapons = {
     weaponBareHands: {
+      id: "weaponBareHands",
       name: "Bare Hands",
       damage: 1,
       vary: 1,
       hands: 2
     },
     weaponDagger: {
+      id: "weaponDagger",
       name: "Dagger",
       damage: 4,
       vary: 1,
       hands: 1
     },
     weaponBroadsword: {
+      id: "weaponBroadsword",
       name: "Broad Sword",
       damage: 14,
       vary: 2,
       hands: 2
     },
     weaponWarAxe: {
+      id: "weaponWarAxe",
       name: "War Axe",
       damage: 18,
       vary: 3,

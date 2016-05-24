@@ -21,11 +21,13 @@ var Gauntlet = (function (gauntlet) {
 
 
 	let speciesData = {
-		specieHuman: {
-			name: "human"
+		speciesHuman: {
+      id: "speciesHuman",
+			name: "Human"
 		},
 		speciesOrc: {
-			name: "orc",
+      id: "speciesOrc",
+			name: "Orc",
 		}
 	};
 

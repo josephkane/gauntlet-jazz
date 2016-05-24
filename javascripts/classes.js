@@ -29,12 +29,14 @@ var Gauntlet = (function(gauntlet) {
 
 
   let fighter = {
+    id: "classfighter",
     name: "Fighter",
     healthBonus: 20,
     strengthBonus: 10
   };
 
   let mage = {
+    id: "classMage",
     name: "Mage",
     magical: true,
     healthBonus: -10,
@@ -47,21 +49,25 @@ var Gauntlet = (function(gauntlet) {
     classFighter: fighter,
     // All non-magical subclasses are set to inherit from fighter
     classWarrior: {
+      id: "classWarrior",
       name: "Warrior",
       healthBonus: fighter.healthBonus + 25,
       strengthBonus: fighter.strengthBonus + 30
     },
     classValkyrie: {
+      id: "classValkyrie",
       name: "Valkyrie",
       healthBonus: fighter.healthBonus + 20,
       strengthBonus: fighter.strengthBonus + 10
     },
     classBerserker: {
+      id: "classBerserker",
       name: "Berserker",
       healthBonus: fighter.healthBonus + 35,
       strengthBonus: fighter.strengthBonus + 20
     },
     classMonk: {
+      id: "classMonk",
       name: "Monk",
       healthBonus: fighter.healthBonus + 10,
       strengthBonus: fighter.strengthBonus + 40
@@ -70,6 +76,7 @@ var Gauntlet = (function(gauntlet) {
     classMage: mage,
     // All subclasses are set to inherit from Mage
     classShaman: {
+      id: "classShaman",
       name: "Shaman",
       magical: mage.magical,
       healthBonus: mage.healthBonus + 5,
@@ -77,6 +84,7 @@ var Gauntlet = (function(gauntlet) {
       intelligenceBonus: mage.intelligenceBonus + 20
     },
     classWizard: {
+      id: "classWizard",
       name: "Wizard",
       magical: mage.magical,
       healthBonus: mage.healthBonus - 15,
@@ -84,12 +92,14 @@ var Gauntlet = (function(gauntlet) {
       intelligenceBonus: mage.intelligenceBonus + 40
     },
     classConjurer: {
+      id: "classConjurer",
       name: "Conjurer",
       magical: mage.magical,
       strengthBonus: mage.strengthBonus - 10,
       intelligenceBonus: mage.intelligenceBonus + 10
     },
     classSorcerer: {
+      id: "classSorcerer",
       name: "Sorcerer",
       magical: mage.magical,
       healthBonus: mage.healthBonus - 5,
