@@ -45,7 +45,9 @@
 
   function populateClasses(species) {
     let allowed = Gauntlet.Species.getSpeciesData(species).allowedClasses;
-    if(!allowed) {
+    if(allowed) {
+      allowed = classList.filter(e => allowed.indexOf(e.id) > -1);
+    } else {
       allowed = classList;
     }
     $classSelect.html(`<option disabled selected value></option>`);
@@ -54,7 +56,9 @@
 
   function populateWeapons(playerClass) {
     let allowed = Gauntlet.PlayerClass.getClassData(playerClass).allowedWeapons;
-    if(!allowed) {
+    if(allowed) {
+      allowed = weaponList.filter(e => allowed.indexOf(e.id) > -1);
+    } else {
       allowed = weaponList;
     }
     $weaponSelect.html(`<option disabled selected value></option>`);
