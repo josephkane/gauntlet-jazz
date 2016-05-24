@@ -16,6 +16,7 @@ var Gauntlet = (function(gauntlet) {
     return {
       name: this.name,
       enemey: enemy.name,
+      magical: false,
       weapon: this.weapon.name,
       weapDamage: weapDamage,
       enemyAlive: enemy.isAlive()
