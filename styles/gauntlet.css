@@ -122,12 +122,12 @@ COMBAT LAYOUT STYLES
 	width: 100%;
 	font-size: 1.3em;
 	font-weight: bolder;
-	background-color: firebrick;
+	background-color: #FD243F;
 	color: white;
 }
 
 #attack-button:hover {
-	background-color: red;
+	background-color: #F51441;
 }
 
 #player-attributes {
