@@ -6,6 +6,9 @@
   let $classSelect = $("#class-select");
   let $weaponSelect = $("#weapon-select");
   let $fightButton = $("#fight-button");
+  let $randomButton = $("#random-button");
+  let randomNameArray = ["Madonna", "Bullwinkle", "Lil' Sebastian", "Dale Earnhardt (RIP)", "Barbara Streisand"]
+  let enemyNameArray = ["Ryan 'Kill You With Kindness' Tanay", "Scott 'I'll Always Know More Than You' Humphries", "Greg 'Of Course I've Got Weed' Korte"];
 
   let speciesList = Gauntlet.Species.getSpeciesList();
   let classList = Gauntlet.PlayerClass.getClassList();
@@ -58,6 +61,13 @@
     $fightButton[0].disabled = (e.target.value === "" || $weaponSelect[0].value === "");
   });
 
+  function switchScreens () {
+    $("#select-screen").hide();
+    $("body").addClass("combat");
+    $("#combat-screen").show();
+    updateStats();
+  };
+
   $speciesSelect.change(function(e) {
     populateClasses(e.target.value);
     $weaponSelect.html(`<option disabled selected value></option>`);
@@ -79,6 +89,14 @@
     $fightButton[0].disabled = ($nameInput[0].value === "");
   });
 
+  $randomButton.click(function () {
+    var randomPlayer = Gauntlet.Character.randomCharacter(randomNameArray);
+    var randomEnemy = Gauntlet.Character.randomCharacter(enemyNameArray);
+    Gauntlet.setPlayer(randomPlayer);
+    Gauntlet.setEnemy(randomEnemy);
+    switchScreens();
+  });
+
   $fightButton.click(function() {
     Gauntlet.setPlayer({
       name: $nameInput.val(),
@@ -88,17 +106,14 @@
     });
 
     //TODO(adam): make random
-    Gauntlet.setEnemy({
-      name: "Steve",
-      speciesId: "orc",
-      classId: "warrior",
-      weaponId: "warAxe"
-    });
-
-    $("#select-screen").hide();
-    $("body").addClass("combat");
-    $("#combat-screen").show();
-    updateStats();
+    // Gauntlet.setEnemy({
+    //   name: "Steve",
+    //   speciesId: "orc",
+    //   classId: "warrior",
+    //   weaponId: "warAxe"
+    // });
+    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(enemyNameArray));
+    switchScreens();
   });
 
   $nameInput.focus();

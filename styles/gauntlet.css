@@ -136,7 +136,8 @@ COMBAT LAYOUT STYLES
 }
 
 .player,
-.enemy {
+.enemy,
+#comments {
 	border-radius: 10px;
 	background-color: rgba(245, 245, 245, .7);
 	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
