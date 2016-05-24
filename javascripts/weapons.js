@@ -22,7 +22,7 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Weapon.getWeaponList = function() {
     let list = [];
     for(let weap in weapons) {
-      list.push({id: weap, name: weapons[weap].name});
+      list.push(weapons[weap]);
     }
     return list;
   };
@@ -30,26 +30,30 @@ var Gauntlet = (function(gauntlet) {
 
   //NOTE(adam): weapon data by id
   let weapons = {
-    bareHands: {
-      name: "bare hands",
+    weaponBareHands: {
+      id: "weaponBareHands",
+      name: "Bare Hands",
       damage: 1,
       vary: 1,
       hands: 2
     },
-    dagger: {
-      name: "dagger",
+    weaponDagger: {
+      id: "weaponDagger",
+      name: "Dagger",
       damage: 4,
       vary: 1,
       hands: 1
     },
-    broadsword: {
-      name: "broad sword",
+    weaponBroadsword: {
+      id: "weaponBroadsword",
+      name: "Broad Sword",
       damage: 14,
       vary: 2,
       hands: 2
     },
-    warAxe: {
-      name: "war axe",
+    weaponWarAxe: {
+      id: "weaponWarAxe",
+      name: "War Axe",
       damage: 18,
       vary: 3,
       hands: 2

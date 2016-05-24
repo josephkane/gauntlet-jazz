@@ -1,7 +1,6 @@
 "use strict";
 
 var Gauntlet = (function(gauntlet) {
-
   gauntlet.Character = function(name) {
     this.name = name;
     this.health = 100;
@@ -12,13 +11,12 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.Character.prototype.attack = function(enemy) {
-    let weapDamage = this.weapon.swing()
+    let weapDamage = this.weapon.swing();
     enemy.health -= weapDamage;
-    // console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
-    $("#comments").html("");
+    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
     $("#comments").html(`${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
     if(!enemy.isAlive()) {
-      // console.log("Victory:", `${enemy.name} is defeated!`);
+      console.log("Victory:", `${enemy.name} is defeated!`);
       $("#comments").html(`${enemy.name} is defeated!`);
     }
     return enemy.isAlive();
@@ -37,20 +35,22 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.Character.randomCharacter = function(name) {
-    let randomName = getRandElem(name);
     let randomSpecies = getRandElem(gauntlet.Species.getSpeciesList());
+
     let allowedClasses = randomSpecies.allowedClasses;
     if(!allowedClasses) {
-      allowedClasses = Gauntlet.PlayerClass.getClassList();
-    };
-    let randomClass = getRandElem(allowedClasses);
+      allowedClasses = gauntlet.PlayerClass.getClassList().map(e => e.id);
+    }
+    let randomClass = gauntlet.PlayerClass.getClassData(getRandElem(allowedClasses));
+
     let allowedWeapons = randomClass.allowedWeapons;
     if(!allowedWeapons) {
-      allowedWeapons = Gauntlet.Weapon.getWeaponList();
-    };
-    let randomWeapon = getRandElem(allowedWeapons);
+      allowedWeapons = gauntlet.Weapon.getWeaponList().map(e => e.id);
+    }
+    let randomWeapon = gauntlet.Weapon.getWeaponData(getRandElem(allowedWeapons));
+
     let randomCharacter = {
-      name: randomName,
+      name: name,
       speciesId: randomSpecies.id,
       classId: randomClass.id,
       weaponId: randomWeapon.id

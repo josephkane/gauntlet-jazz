@@ -62,11 +62,14 @@
   });
 
   function switchScreens () {
+    Gauntlet.View.setPlayer();
+    Gauntlet.View.setEnemy();
+
     $("#select-screen").hide();
     $("body").addClass("combat");
     $("#combat-screen").show();
     updateStats();
-  };
+  }
 
   $speciesSelect.change(function(e) {
     populateClasses(e.target.value);
@@ -90,8 +93,8 @@
   });
 
   $randomButton.click(function () {
-    var randomPlayer = Gauntlet.Character.randomCharacter(randomNameArray);
-    var randomEnemy = Gauntlet.Character.randomCharacter(enemyNameArray);
+    var randomPlayer = Gauntlet.Character.randomCharacter(getRandElem(randomNameArray));
+    var randomEnemy = Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray));
     Gauntlet.setPlayer(randomPlayer);
     Gauntlet.setEnemy(randomEnemy);
     switchScreens();
@@ -105,14 +108,13 @@
       weaponId: $weaponSelect.val()
     });
 
-    //TODO(adam): make random
     // Gauntlet.setEnemy({
     //   name: "Steve",
     //   speciesId: "orc",
     //   classId: "warrior",
     //   weaponId: "warAxe"
     // });
-    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(enemyNameArray));
+    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray)));
     switchScreens();
   });
 
