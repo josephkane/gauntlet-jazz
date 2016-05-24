@@ -135,6 +135,8 @@ COMBAT LAYOUT STYLES
 	border-radius: 10px;
 	background-color: rgba(245, 245, 245, .7);
 	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
+	transition: opacity 0.75s ease-out;
+	opacity: 1;
 }
 
 .stat-name {
@@ -143,4 +145,13 @@ COMBAT LAYOUT STYLES
 
 .stats {
 	margin-top: 10px;
+}
+
+#result {
+	text-align: center;
+}
+
+.hit {
+	background-color: #ea0f38;
+	opacity: 0.5;
 }

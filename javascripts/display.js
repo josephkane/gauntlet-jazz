@@ -32,8 +32,12 @@
   }
 
   $("#attack-button").click(function() {
-    Gauntlet.fight();
+    if(!Gauntlet.fight()) {
+      $("#result-header").html(Gauntlet.getPlayer().isAlive() ? "Victory!" : "Defeat...");
+      $("#result").modal();
+    }
     updateStats();
+
   });
 
   $speciesSelect.html(`<option disabled selected value></option>`);
@@ -41,7 +45,9 @@
 
   function populateClasses(species) {
     let allowed = Gauntlet.Species.getSpeciesData(species).allowedClasses;
-    if(!allowed) {
+    if(allowed) {
+      allowed = classList.filter(e => allowed.indexOf(e.id) > -1);
+    } else {
       allowed = classList;
     }
     $classSelect.html(`<option disabled selected value></option>`);
@@ -50,7 +56,9 @@
 
   function populateWeapons(playerClass) {
     let allowed = Gauntlet.PlayerClass.getClassData(playerClass).allowedWeapons;
-    if(!allowed) {
+    if(allowed) {
+      allowed = weaponList.filter(e => allowed.indexOf(e.id) > -1);
+    } else {
       allowed = weaponList;
     }
     $weaponSelect.html(`<option disabled selected value></option>`);
@@ -108,14 +116,14 @@
       weaponId: $weaponSelect.val()
     });
 
-    // Gauntlet.setEnemy({
-    //   name: "Steve",
-    //   speciesId: "orc",
-    //   classId: "warrior",
-    //   weaponId: "warAxe"
-    // });
     Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray)));
     switchScreens();
+  });
+
+  $("#result-button").click(function() {
+    $("#combat-screen").hide();
+    $("body").removeClass("combat");
+    $("#select-screen").show();
   });
 
   $nameInput.focus();

@@ -41,7 +41,8 @@ var Gauntlet = (function(gauntlet) {
     magical: true,
     healthBonus: -10,
     strengthBonus: -20,
-    intelligenceBonus: 20
+    intelligenceBonus: 20,
+    allowedWeapons: ["weaponHands", "weaponDagger", "weaponSword"]
   };
 
   let classes = {
@@ -52,25 +53,29 @@ var Gauntlet = (function(gauntlet) {
       id: "classWarrior",
       name: "Warrior",
       healthBonus: fighter.healthBonus + 25,
-      strengthBonus: fighter.strengthBonus + 30
+      strengthBonus: fighter.strengthBonus + 30,
+      allowedWeapons: ["weaponHands", "weaponDagger", "weaponSword"]
     },
     classValkyrie: {
       id: "classValkyrie",
       name: "Valkyrie",
       healthBonus: fighter.healthBonus + 20,
-      strengthBonus: fighter.strengthBonus + 10
+      strengthBonus: fighter.strengthBonus + 10,
+      allowedWeapons: ["weaponHands", "weaponSword"]
     },
     classBerserker: {
       id: "classBerserker",
       name: "Berserker",
       healthBonus: fighter.healthBonus + 35,
-      strengthBonus: fighter.strengthBonus + 20
+      strengthBonus: fighter.strengthBonus + 20,
+      allowedWeapons: ["weaponAxe"]
     },
     classMonk: {
       id: "classMonk",
       name: "Monk",
       healthBonus: fighter.healthBonus + 10,
-      strengthBonus: fighter.strengthBonus + 40
+      strengthBonus: fighter.strengthBonus + 40,
+      allowedWeapons: ["weaponHands"]
     },
     // MAGICAL CLASSES
     classMage: mage,
@@ -81,7 +86,8 @@ var Gauntlet = (function(gauntlet) {
       magical: mage.magical,
       healthBonus: mage.healthBonus + 5,
       strengthBonus: mage.strengthBonus - 10,
-      intelligenceBonus: mage.intelligenceBonus + 20
+      intelligenceBonus: mage.intelligenceBonus + 20,
+      allowedWeapons: ["weaponHands", "weaponDagger", "weaponSword"]
     },
     classWizard: {
       id: "classWizard",
@@ -89,14 +95,16 @@ var Gauntlet = (function(gauntlet) {
       magical: mage.magical,
       healthBonus: mage.healthBonus - 15,
       strengthBonus: mage.strengthBonus - 25,
-      intelligenceBonus: mage.intelligenceBonus + 40
+      intelligenceBonus: mage.intelligenceBonus + 40,
+      allowedWeapons: ["weaponHands", "weaponDagger"]
     },
     classConjurer: {
       id: "classConjurer",
       name: "Conjurer",
       magical: mage.magical,
       strengthBonus: mage.strengthBonus - 10,
-      intelligenceBonus: mage.intelligenceBonus + 10
+      intelligenceBonus: mage.intelligenceBonus + 10,
+      allowedWeapons: ["weaponHands", "weaponDagger"]
     },
     classSorcerer: {
       id: "classSorcerer",
@@ -104,7 +112,8 @@ var Gauntlet = (function(gauntlet) {
       magical: mage.magical,
       healthBonus: mage.healthBonus - 5,
       strengthBonus: mage.strengthBonus - 20,
-      intelligenceBonus: mage.intelligenceBonus + 30
+      intelligenceBonus: mage.intelligenceBonus + 30,
+      allowedWeapons: ["weaponHands"]
     }
   };
 

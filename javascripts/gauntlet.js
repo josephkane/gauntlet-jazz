@@ -18,14 +18,14 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.fight = function() {
     if(stillFighting) {
-      stillFighting = player.attack(enemy);
-      gauntlet.View.playerAttack();
+      let result = player.attack(enemy);
+      stillFighting = result.enemyAlive;
+      gauntlet.View.playerAttack(result);
     }
     if(stillFighting) {
-      stillFighting = setTimeout(function() {
-      	enemy.attack(player);
-      	gauntlet.View.enemyAttack();
-      }, 2500);
+      let result = enemy.attack(player);
+    	stillFighting = result.enemyAlive;
+    	gauntlet.View.enemyAttack(result);
     }
 
     return stillFighting;
