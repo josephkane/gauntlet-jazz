@@ -8,6 +8,8 @@ var Gauntlet = (function(gauntlet) {
   let animations = [];
 
   let $comments = $("#comments");
+  let $playerStats = $(".player");
+  let $enemyStats = $(".enemy");
 
   let player = null;
   let enemy = null;
@@ -70,6 +72,9 @@ var Gauntlet = (function(gauntlet) {
         playerAttacking = false;
         setComments(animations[0]);
         animations.shift();   //NOTE(adam): 0 element was player attacking
+
+        $enemyStats.addClass("hit");
+        setTimeout(() => $enemyStats.removeClass("hit"), 750);
       }
     }
 
@@ -81,6 +86,9 @@ var Gauntlet = (function(gauntlet) {
         enemyAttacking = false;
         setComments(animations[0]);
         animations.shift();   //NOTE(adam): 0 element was enemy attacking
+
+        $playerStats.addClass("hit");
+        setTimeout(() => $playerStats.removeClass("hit"), 750);
       }
     }
   }
