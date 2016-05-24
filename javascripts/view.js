@@ -33,9 +33,9 @@ var Gauntlet = (function(gauntlet) {
     }
   };
 
-  let playerCoord = {x: 10, y: 10};
-  let enemyCoord = {x: canvas.width - 10, y: 10};
-  let size = {w: 200, h: 200};
+  let playerCoord = {x: 10, y: 100};
+  let enemyCoord = {x: canvas.width - 10, y: 100};
+  let size = {w: 200, h: 250};
 
   let playerAttacking = false;
   let enemyAttacking = false;
