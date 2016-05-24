@@ -22,7 +22,7 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Weapon.getWeaponList = function() {
     let list = [];
     for(let weap in weapons) {
-      list.push({id: weap, name: weapons[weap].name});
+      list.push(weapons[weap]);
     }
     return list;
   };

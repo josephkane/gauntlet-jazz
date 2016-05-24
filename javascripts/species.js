@@ -14,7 +14,7 @@ var Gauntlet = (function (gauntlet) {
   gauntlet.Species.getSpeciesList = function() {
     let list = [];
     for(let spec in speciesData) {
-      list.push({id: spec, name: speciesData[spec].name});
+      list.push(speciesData[spec]);
     }
     return list;
   };
@@ -23,11 +23,13 @@ var Gauntlet = (function (gauntlet) {
 	let speciesData = {
 		speciesHuman: {
       id: "speciesHuman",
-			name: "Human"
-		},
-		speciesOrc: {
+			name: "Human",
+      allowedClasses: ["classFighter", "classWarrior", "classWizard", "classMonk"]
+    },
+    speciesOrc: {
       id: "speciesOrc",
-			name: "Orc",
+      name: "Orc",
+      allowedClasses: ["classFighter", "classBerserker"]
 		}
 	};
 

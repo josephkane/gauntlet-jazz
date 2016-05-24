@@ -21,7 +21,7 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.PlayerClass.getClassList = function() {
     let list = [];
     for(let cls in classes) {
-      list.push({id: cls, name: classes[cls].name});
+      list.push(classes[cls]);
     }
     return list;
   };
@@ -29,7 +29,7 @@ var Gauntlet = (function(gauntlet) {
 
 
   let fighter = {
-    id: "classfighter",
+    id: "classFighter",
     name: "Fighter",
     healthBonus: 20,
     strengthBonus: 10
