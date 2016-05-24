@@ -33,7 +33,7 @@
 
   $("#attack-button").click(function() {
     if(!Gauntlet.fight()) {
-      $("#result-header").html = (Gauntlet.getPlayer().isAlive() ? "Victory!" : "Defeat...");
+      $("#result-header").html(Gauntlet.getPlayer().isAlive() ? "Victory!" : "Defeat...");
       $("#result").modal();
     }
     updateStats();
