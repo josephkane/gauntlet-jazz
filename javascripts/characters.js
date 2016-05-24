@@ -1,6 +1,7 @@
 "use strict";
 
 var Gauntlet = (function(gauntlet) {
+
   gauntlet.Character = function(name) {
     this.name = name;
     this.health = 100;
@@ -30,6 +31,28 @@ var Gauntlet = (function(gauntlet) {
     character.health += character.class.healthBonus;
 
     return character;
+  };
+
+  gauntlet.Character.randomCharacter = function(name) {
+    let randomName = getRandElem(name);
+    let randomSpecies = getRandElem(gauntlet.Species.getSpeciesList());
+    let allowedClasses = randomSpecies.allowedClasses;
+    if(!allowedClasses) {
+      allowedClasses = Gauntlet.PlayerClass.getClassList();
+    };
+    let randomClass = getRandElem(allowedClasses);
+    let allowedWeapons = randomClass.allowedWeapons;
+    if(!allowedWeapons) {
+      allowedWeapons = Gauntlet.Weapon.getWeaponList();
+    };
+    let randomWeapon = getRandElem(allowedWeapons);
+    let randomCharacter = {
+      name: randomName,
+      speciesId: randomSpecies.id,
+      classId: randomClass.id,
+      weaponId: randomWeapon.id
+    };
+    return randomCharacter;
   };
 
   return gauntlet;
