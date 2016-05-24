@@ -65,12 +65,14 @@
     $classSelect.selectedIndex = -1;
     $weaponSelect[0].disabled = true;
     $weaponSelect.selectedIndex = -1;
+    $fightButton[0].disabled = true;
   });
 
   $classSelect.change(function(e) {
     populateWeapons(e.target.value);
     $weaponSelect[0].disabled = false;
     $weaponSelect.selectedIndex = -1;
+    $fightButton[0].disabled = true;
   });
 
   $weaponSelect.change(function() {
@@ -98,5 +100,7 @@
     $("#combat-screen").show();
     updateStats();
   });
+
+  $nameInput.focus();
 
 }());
