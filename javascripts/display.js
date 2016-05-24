@@ -62,6 +62,9 @@
   });
 
   function switchScreens () {
+    Gauntlet.View.setPlayer();
+    Gauntlet.View.setEnemy();
+
     $("#select-screen").hide();
     $("body").addClass("combat");
     $("#combat-screen").show();

@@ -1,12 +1,27 @@
 "use strict";
 
 var Gauntlet = (function(gauntlet) {
+  gauntlet.View = {};
+
   let canvas = $("#field")[0];
   let ctx = canvas.getContext("2d");
   let animations = [];
 
-  let playerImg = $("#orc-img")[0];
-  let enemyImg = $("#orc-img")[0];
+  let player = null;
+  let enemy = null;
+
+  let playerImg = null;
+  let enemyImg = null;
+
+  gauntlet.View.setPlayer = function() {
+    player = gauntlet.getPlayer();
+    playerImg = $("#" + player.species.name)[0];
+  };
+
+  gauntlet.View.setEnemy = function() {
+    enemy = gauntlet.getEnemy();
+    enemyImg = $("#" + enemy.species.name)[0];
+  };
 
   let playerCoord = {x: 10, y: 10};
   let enemyCoord = {x: canvas.width - 10, y: 10};
@@ -16,6 +31,11 @@ var Gauntlet = (function(gauntlet) {
   let enemyAttacking = false;
 
   function draw() {
+    if(!(player && enemy && playerImg && enemyImg)) {
+      console.error("Draw", "Data net set.");
+      return;
+    }
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "rgba(245, 245, 245, .7)";
@@ -56,7 +76,6 @@ var Gauntlet = (function(gauntlet) {
 
   setInterval(draw, 10);
 
-  gauntlet.View = {};
   gauntlet.View.playerAttack = () => animations.push({player: true, enemy: false});
   gauntlet.View.enemyAttack = () => animations.push({player: false, enemy: true});
 

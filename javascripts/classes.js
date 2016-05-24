@@ -44,52 +44,52 @@ var Gauntlet = (function(gauntlet) {
 
   let classes = {
     // MELEE CLASSES
-    fighter: fighter,
+    classFighter: fighter,
     // All non-magical subclasses are set to inherit from fighter
-    warrior: {
+    classWarrior: {
       name: "Warrior",
       healthBonus: fighter.healthBonus + 25,
       strengthBonus: fighter.strengthBonus + 30
     },
-    valkyrie: {
+    classValkyrie: {
       name: "Valkyrie",
       healthBonus: fighter.healthBonus + 20,
       strengthBonus: fighter.strengthBonus + 10
     },
-    berserker: {
+    classBerserker: {
       name: "Berserker",
       healthBonus: fighter.healthBonus + 35,
       strengthBonus: fighter.strengthBonus + 20
     },
-    monk: {
+    classMonk: {
       name: "Monk",
       healthBonus: fighter.healthBonus + 10,
       strengthBonus: fighter.strengthBonus + 40
     },
     // MAGICAL CLASSES
-    mage: mage,
+    classMage: mage,
     // All subclasses are set to inherit from Mage
-    shaman: {
+    classShaman: {
       name: "Shaman",
       magical: mage.magical,
       healthBonus: mage.healthBonus + 5,
       strengthBonus: mage.strengthBonus - 10,
       intelligenceBonus: mage.intelligenceBonus + 20
     },
-    wizard: {
+    classWizard: {
       name: "Wizard",
       magical: mage.magical,
       healthBonus: mage.healthBonus - 15,
       strengthBonus: mage.strengthBonus - 25,
       intelligenceBonus: mage.intelligenceBonus + 40
     },
-    conjurer: {
+    classConjurer: {
       name: "Conjurer",
       magical: mage.magical,
       strengthBonus: mage.strengthBonus - 10,
       intelligenceBonus: mage.intelligenceBonus + 10
     },
-    sorcerer: {
+    classSorcerer: {
       name: "Sorcerer",
       magical: mage.magical,
       healthBonus: mage.healthBonus - 5,
