@@ -13,13 +13,13 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Character.prototype.attack = function(enemy) {
     let weapDamage = this.weapon.swing();
     enemy.health -= weapDamage;
-    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
-    $("#comments").html(`${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
-    if(!enemy.isAlive()) {
-      console.log("Victory:", `${enemy.name} is defeated!`);
-      $("#comments").html(`${enemy.name} is defeated!`);
-    }
-    return enemy.isAlive();
+    return {
+      name: this.name,
+      enemey: enemy.name,
+      weapon: this.weapon.name,
+      weapDamage: weapDamage,
+      enemyAlive: enemy.isAlive()
+    };
   };
 
   gauntlet.Character.constructCharacter = function(details) {

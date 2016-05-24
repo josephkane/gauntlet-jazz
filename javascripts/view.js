@@ -7,6 +7,8 @@ var Gauntlet = (function(gauntlet) {
   let ctx = canvas.getContext("2d");
   let animations = [];
 
+  let $comments = $("#comments");
+
   let player = null;
   let enemy = null;
 
@@ -36,6 +38,10 @@ var Gauntlet = (function(gauntlet) {
   let playerAttacking = false;
   let enemyAttacking = false;
 
+  function setComments(result) {
+    $comments.html(`${result.name} hits ${result.enemy} with ${result.weapon} for ${result.weapDamage} damage.`);
+  }
+
   function draw() {
     if(!(player && enemy && playerImg && enemyImg)) { return; }
 
@@ -62,6 +68,7 @@ var Gauntlet = (function(gauntlet) {
       if(playerCoord.x >= 650) {
         playerCoord.x = 10;
         playerAttacking = false;
+        setComments(animations[0]);
         animations.shift();   //NOTE(adam): 0 element was player attacking
       }
     }
@@ -72,6 +79,7 @@ var Gauntlet = (function(gauntlet) {
       if(enemyCoord.x <= 250) {
         enemyCoord.x = canvas.width - 10;
         enemyAttacking = false;
+        setComments(animations[0]);
         animations.shift();   //NOTE(adam): 0 element was enemy attacking
       }
     }
@@ -79,8 +87,10 @@ var Gauntlet = (function(gauntlet) {
 
   setInterval(draw, 10);
 
-  gauntlet.View.playerAttack = () => animations.push({player: true, enemy: false});
-  gauntlet.View.enemyAttack = () => animations.push({player: false, enemy: true});
+  gauntlet.View.playerAttack = (result) =>
+    animations.push(Object.assign(result, {player: true, enemy: false}));
+  gauntlet.View.enemyAttack = (result) =>
+    animations.push(Object.assign(result, {player: false, enemy: true}));
 
   return gauntlet;
 }(Gauntlet || {}));
