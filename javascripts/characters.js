@@ -35,10 +35,6 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.Character.randomCharacter = function(name) {
-    if(!name) {
-      name = getRandElem(name);
-    }
-
     let randomSpecies = getRandElem(gauntlet.Species.getSpeciesList());
 
     let allowedClasses = randomSpecies.allowedClasses;

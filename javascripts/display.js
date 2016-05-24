@@ -93,8 +93,8 @@
   });
 
   $randomButton.click(function () {
-    var randomPlayer = Gauntlet.Character.randomCharacter(randomNameArray);
-    var randomEnemy = Gauntlet.Character.randomCharacter(enemyNameArray);
+    var randomPlayer = Gauntlet.Character.randomCharacter(getRandElem(randomNameArray));
+    var randomEnemy = Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray));
     Gauntlet.setPlayer(randomPlayer);
     Gauntlet.setEnemy(randomEnemy);
     switchScreens();
@@ -114,7 +114,7 @@
     //   classId: "warrior",
     //   weaponId: "warAxe"
     // });
-    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(enemyNameArray));
+    Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray)));
     switchScreens();
   });
 
