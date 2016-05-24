@@ -66,7 +66,7 @@
     $("body").addClass("combat");
     $("#combat-screen").show();
     updateStats();
-  };
+  }
 
   $speciesSelect.change(function(e) {
     populateClasses(e.target.value);
@@ -105,7 +105,6 @@
       weaponId: $weaponSelect.val()
     });
 
-    //TODO(adam): make random
     // Gauntlet.setEnemy({
     //   name: "Steve",
     //   speciesId: "orc",

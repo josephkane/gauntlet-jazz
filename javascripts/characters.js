@@ -12,13 +12,12 @@ var Gauntlet = (function(gauntlet) {
   };
 
   gauntlet.Character.prototype.attack = function(enemy) {
-    let weapDamage = this.weapon.swing()
+    let weapDamage = this.weapon.swing();
     enemy.health -= weapDamage;
-    // console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
-    $("#comments").html("");
+    console.log("Attack: ", `${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
     $("#comments").html(`${this.name} attacks ${enemy.name} with ${this.weapon.name} for ${weapDamage} damage.`);
     if(!enemy.isAlive()) {
-      // console.log("Victory:", `${enemy.name} is defeated!`);
+      console.log("Victory:", `${enemy.name} is defeated!`);
       $("#comments").html(`${enemy.name} is defeated!`);
     }
     return enemy.isAlive();
@@ -42,12 +41,12 @@ var Gauntlet = (function(gauntlet) {
     let allowedClasses = randomSpecies.allowedClasses;
     if(!allowedClasses) {
       allowedClasses = Gauntlet.PlayerClass.getClassList();
-    };
+    }
     let randomClass = getRandElem(allowedClasses);
     let allowedWeapons = randomClass.allowedWeapons;
     if(!allowedWeapons) {
       allowedWeapons = Gauntlet.Weapon.getWeaponList();
-    };
+    }
     let randomWeapon = getRandElem(allowedWeapons);
     let randomCharacter = {
       name: randomName,
