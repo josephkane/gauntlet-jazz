@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Indie Flower", "Helvetica", "sans-serif";
+  font-family: "Architects Daughter", "Helvetica", "sans-serif";
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -117,17 +117,11 @@ COMBAT LAYOUT STYLES
 
 #attack-button {
 	text-align: center;
-	margin-top: 1rem;
+	margin: 1rem 0;
 	padding: 10px 5px;
 	width: 100%;
 	font-size: 1.3em;
 	font-weight: bolder;
-	background-color: #FD243F;
-	color: white;
-}
-
-#attack-button:hover {
-	background-color: #F51441;
 }
 
 #player-attributes {
