@@ -22,8 +22,8 @@ var Gauntlet = (function(gauntlet) {
       gauntlet.View.playerAttack();
     }
     if(stillFighting) {
-      stillFighting = setTimeout(function() {
-      	enemy.attack(player);
+      setTimeout(function() {
+      	stillFighting = enemy.attack(player);
       	gauntlet.View.enemyAttack();
       }, 2500);
     }

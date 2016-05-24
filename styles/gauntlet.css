@@ -144,3 +144,7 @@ COMBAT LAYOUT STYLES
 .stats {
 	margin-top: 10px;
 }
+
+#result {
+	text-align: center;
+}

@@ -32,8 +32,12 @@
   }
 
   $("#attack-button").click(function() {
-    Gauntlet.fight();
+    if(!Gauntlet.fight()) {
+      $("#result-header").html = (Gauntlet.getPlayer().isAlive() ? "Victory!" : "Defeat...");
+      $("#result").modal();
+    }
     updateStats();
+
   });
 
   $speciesSelect.html(`<option disabled selected value></option>`);
@@ -108,14 +112,14 @@
       weaponId: $weaponSelect.val()
     });
 
-    // Gauntlet.setEnemy({
-    //   name: "Steve",
-    //   speciesId: "orc",
-    //   classId: "warrior",
-    //   weaponId: "warAxe"
-    // });
     Gauntlet.setEnemy(Gauntlet.Character.randomCharacter(getRandElem(enemyNameArray)));
     switchScreens();
+  });
+
+  $("#result-button").click(function() {
+    $("#combat-screen").hide();
+    $("body").removeClass("combat");
+    $("#select-screen").show();
   });
 
   $nameInput.focus();
