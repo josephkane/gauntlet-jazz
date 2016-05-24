@@ -16,9 +16,15 @@ ul {
 	padding-left: 0;
 }
 
+h1,
+#select-content label {
+	font-weight: bolder;
+}
+
 .button {
 	border: 1px solid black;
 	border-radius: 5px;
+	padding: 0.25rem 1.5rem;
 }
 
 .button:hover {
@@ -63,6 +69,22 @@ SELECT LAYOUT STYLES
 	margin-bottom: 20px;
 }
 
+#species-select[disabled],
+#class-select[disabled],
+#weapon-select[disabled],
+input[disabled] {
+	background-color: lightgrey;
+}
+
+button[disabled] {
+	color: grey;
+}
+
+button[disabled]:hover {
+	color: grey;
+	background: lightgrey;
+}
+
 /*------------------
 
 COMBAT LAYOUT STYLES
@@ -77,15 +99,10 @@ COMBAT LAYOUT STYLES
 	text-align: center;
 }
 
-.field-display {
-	width: 100%;
+#field {
+	height: 400px;
 	border-radius: 10px;
 	box-shadow: 0 0 5px 5px rgba(245, 245, 245, .7);
-}
-
-#field {
-	height: 250px;
-	width: 90%;
 }
 
 #combat-headline {
@@ -100,9 +117,17 @@ COMBAT LAYOUT STYLES
 
 #attack-button {
 	text-align: center;
+	margin-top: 1rem;
 	padding: 10px 5px;
 	width: 100%;
 	font-size: 1.3em;
+	font-weight: bolder;
+	background-color: #FD243F;
+	color: white;
+}
+
+#attack-button:hover {
+	background-color: #F51441;
 }
 
 #player-attributes {
