@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gauntlet</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Architects+Daughter|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/gauntlet.css">
+    <link rel="stylesheet" type="text/css" href="styles/animations.css">
+  </head>
+
+  <body>
+
+    <div id="select-screen" class="container">
+      <div id="select-content" class="stretchRight">
+        <div class="row">
+          <h1 class="col-xs-12">WELCOME TO GAUNTLET!</h1>
+        </div>
+        <div class="row">
+          <h3 class="col-xs-12">CHOOSE YOUR FIGHTER!</h3>
+        </div>
+        <div class="row">
+          <label class="col-xs-12">NAME:</label>
+          <input id="name-input" class="col-xs-8 col" type="text">
+          <label class="col-xs-12">SPECIES:</label>
+          <select id="species-select" class="col-xs-8 col"></select>
+          <label class="col-xs-12">CLASS:</label>
+          <select id="class-select" class="col-xs-8 col" disabled></select>
+          <label class="col-xs-12">WEAPON:</label>
+          <select id="weapon-select" class="col-xs-8 col" disabled></select>
+        </div>
+        <div id="select-buttons" class="row">
+          <div class="col-xs-6 text-center">
+            <button id="random-button" class="button" type="button">RANDOM!</button>
+          </div>
+          <div class="col-xs-6 text-center">
+            <button id="fight-button" class="button" type="button" disabled>FIGHT!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="combat-screen" class="container">
+
+      <div class="row">
+        <h1 id="combat-headline" class="col-xs-12">FIGHT!</h1>
+      </div>
+
+      <div id="battleground" class="row">
+        <div class="row">
+          <div id="field-container" class="col-xs-12">
+            <canvas id="field" width="900" height="500"></canvas>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-5"></div>
+          <div id="attack-area" class="col-xs-2">
+            <button id="attack-button" class="button" type="button">ATTACK!</button>
+          </div>
+          <div class="col-xs-5"></div>
+        </div>
+
+      <div id="player-attributes" class="row">
+        <div class="col-xs-4 player text-center">
+          <ul class="stats">
+            <li><span class="stat-name">NAME:</span><span class="stat player-name"></span></li>
+            <li><span class="stat-name">HP:</span><span class="stat player-hp"></span></li>
+            <li><span class="stat-name">SPECIES:</span><span class="stat player-species"></span></li>
+            <li><span class="stat-name">CLASS:</span><span class="stat player-class"></span></li>
+            <li><span class="stat-name">WEAPON:</span><span class="stat player-weapon"></span></li>
+          </ul>
+        </div>
+        <div id="comments" class="col-xs-4">
+        </div>
+        <div class="col-xs-4 enemy text-center">
+          <ul class="stats">
+            <li><span class="stat-name">NAME:</span><span class="stat enemy-name"></span></li>
+            <li><span class="stat-name">HP:</span><span class="stat enemy-hp"></span></li>
+            <li><span class="stat-name">SPECIES:</span><span class="stat enemy-species"></span></li>
+            <li><span class="stat-name">CLASS:</span><span class="stat enemy-class"></span></li>
+            <li><span class="stat-name">WEAPON:</span><span class="stat enemy-weapon"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="modal" id=result>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 id="result-header">Victory!</h2>
+            <p>Play again?</p>
+            <button id="result-button" type="submit" class="button" data-dismiss="modal">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img id="speciesOrc" src="img/orc.gif" style="display: none">
+    <img id="speciesHuman" src="img/spyke_small.png" style="display: none">
+    <img id="classWarrior" src="img/knight.jpg" style="display: none">
+    <img id="classMonk" src="img/monk.jpg" style="display: none">
+    <img id="classWizard" src="img/wizard.jpg" style="display: none">
+
+    <!-- <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script> -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="javascripts/characters.js" type="text/javascript"></script>
+    <script src="javascripts/species.js" type="text/javascript"></script>
+    <script src="javascripts/classes.js" type="text/javascript"></script>
+    <script src="javascripts/weapons.js" type="text/javascript"></script>
+    <script src="javascripts/spells.js" type="text/javascript"></script>
+    <script src="javascripts/view.js" type="text/javascript"></script>
+    <script src="javascripts/gauntlet.js" type="text/javascript"></script>
+    <script src="javascripts/display.js" type="text/javascript"></script>
+  </body>
+
+</html>
